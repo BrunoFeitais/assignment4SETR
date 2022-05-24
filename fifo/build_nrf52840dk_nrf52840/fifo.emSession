@@ -11,11 +11,11 @@
  <Memory3/>
  <Memory4/>
  <Project>
-  <ProjectSessionItem path="shmem"/>
-  <ProjectSessionItem path="shmem;build"/>
-  <ProjectSessionItem path="shmem;build;all"/>
-  <ProjectSessionItem path="shmem;build;app/libapp.a"/>
-  <ProjectSessionItem path="shmem;build;app/libapp.a;C_COMPILER__app_"/>
+  <ProjectSessionItem path="fifo"/>
+  <ProjectSessionItem path="fifo;build"/>
+  <ProjectSessionItem path="fifo;build;all"/>
+  <ProjectSessionItem path="fifo;build;app/libapp.a"/>
+  <ProjectSessionItem path="fifo;build;app/libapp.a;C_COMPILER__app_"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -40,7 +40,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="113" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../src/main.c" selected="1" top="60" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="19" y="17" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../src/main.c" selected="1" top="3" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="zephyr/zephyr.elf(build)" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Common" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

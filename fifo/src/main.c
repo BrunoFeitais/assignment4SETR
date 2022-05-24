@@ -17,8 +17,6 @@
 #include <sys/__assert.h>
 #include <string.h>
 
-
-
 /* Size of stack area used by each thread (can be thread specific, if necessary)*/
 #define STACK_SIZE 1024
 

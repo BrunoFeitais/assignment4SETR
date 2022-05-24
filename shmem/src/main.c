@@ -9,7 +9,6 @@
  * 
  */
 
-
 #include <zephyr.h>
 #include <device.h>
 #include <drivers/gpio.h>
@@ -19,7 +18,8 @@
 #include <timing/timing.h>
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <devicetree.h>
+#include <drivers/pwm.h>
 
 /* Size of stack area used by each thread (can be thread specific, if necessary)*/
 #define STACK_SIZE 1024
@@ -31,6 +31,13 @@
 
 /* Therad periodicity (in ms)*/
 #define thread_A_period 1000
+
+
+/* Refer to dts file */
+#define GPIO0_NID DT_NODELABEL(gpio0)
+#define PWM0_NID DT_NODELABEL(pwm0)
+#define BOARDLED1 0xe /* Pin at which LED1 is connected.  Addressing is direct (i.e., pin number) */
+
 
 /* Create thread stack space */
 K_THREAD_STACK_DEFINE(thread_A_stack, STACK_SIZE);
@@ -63,7 +70,28 @@ void thread_C_code(void *argA, void *argB, void *argC);
 
 /* Main function */
 void main(void) {
+
+    const struct device *pwm0_dev;          /* Pointer to PWM device structure */
+    int pwm0_channel  = 14;                 /* Ouput pin associated to pwm channel. See DTS for pwm channel - output pin association */ 
+    unsigned int pwmPeriod_us = 1000;       /* PWM period in us */
+    int ret;
     
+    pwm0_dev = device_get_binding(DT_LABEL(PWM0_NID));
+    if (pwm0_dev == NULL) {
+	printk("Error: PWM device %s is not ready\n", pwm0_dev->name);
+	return;
+    }
+    else  {
+        printk("PWM device %s is ready\n", pwm0_dev->name);            
+    }
+
+    ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us, (unsigned int)(1000), PWM_POLARITY_NORMAL);
+    if (ret) {
+      printk("Error %d: failed to set pulse width\n", ret);
+      return;
+    }
+
+
     /* Welcome message */
     printf("\n\r Illustration of the use of shmem + semaphores\n\r");
     
@@ -85,7 +113,6 @@ void main(void) {
         NULL, NULL, NULL, thread_C_prio, 0, K_NO_WAIT);
 
     return;
-
 } 
 
 /* Thread code implementation */
