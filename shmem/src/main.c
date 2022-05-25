@@ -12,6 +12,7 @@
 #include <zephyr.h>
 #include <device.h>
 #include <drivers/gpio.h>
+#include <drivers/pwm.h>
 #include <sys/printk.h>
 #include <sys/__assert.h>
 #include <string.h>
@@ -19,7 +20,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <devicetree.h>
-#include <drivers/pwm.h>
+
+/* Refer to dts file */
+#define GPIO0_NID DT_NODELABEL(gpio0)
+#define PWM0_NID DT_NODELABEL(pwm0)
+#define BOARDLED1 0x0d /* Pin at which LED1 is connected.  Addressing is direct (i.e., pin number) */
 
 /* Size of stack area used by each thread (can be thread specific, if necessary)*/
 #define STACK_SIZE 1024
@@ -30,14 +35,7 @@
 #define thread_C_prio 1
 
 /* Therad periodicity (in ms)*/
-#define thread_A_period 1000
-
-
-/* Refer to dts file */
-#define GPIO0_NID DT_NODELABEL(gpio0)
-#define PWM0_NID DT_NODELABEL(pwm0)
-#define BOARDLED1 0xe /* Pin at which LED1 is connected.  Addressing is direct (i.e., pin number) */
-
+#define thread_A_period 3000
 
 /* Create thread stack space */
 K_THREAD_STACK_DEFINE(thread_A_stack, STACK_SIZE);
@@ -55,6 +53,8 @@ k_tid_t thread_B_tid;
 k_tid_t thread_C_tid;
 
 /* Global vars (shared memory between tasks A/B and B/C, resp) */
+int DadosAB[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+int DadosBC = 0;
 int ab = 100;
 int bc = 200;
 
@@ -72,10 +72,13 @@ void thread_C_code(void *argA, void *argB, void *argC);
 void main(void) {
 
     const struct device *pwm0_dev;          /* Pointer to PWM device structure */
-    int pwm0_channel  = 14;                 /* Ouput pin associated to pwm channel. See DTS for pwm channel - output pin association */ 
+    int pwm0_channel  = 13;                 /* Ouput pin associated to pwm channel. See DTS for pwm channel - output pin association */ 
     unsigned int pwmPeriod_us = 1000;       /* PWM period in us */
-    int ret;
-    
+    int ret = 0;
+    unsigned int dcValue[]={0,33,66,100};   /* Duty-cycle in % */
+    unsigned int dcIndex = 1;
+
+/*
     pwm0_dev = device_get_binding(DT_LABEL(PWM0_NID));
     if (pwm0_dev == NULL) {
 	printk("Error: PWM device %s is not ready\n", pwm0_dev->name);
@@ -84,12 +87,12 @@ void main(void) {
     else  {
         printk("PWM device %s is ready\n", pwm0_dev->name);            
     }
-
-    ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us, (unsigned int)(1000), PWM_POLARITY_NORMAL);
+    ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*dcValue[dcIndex])/100), PWM_POLARITY_NORMAL);
     if (ret) {
       printk("Error %d: failed to set pulse width\n", ret);
       return;
     }
+*/
 
 
     /* Welcome message */
@@ -133,13 +136,14 @@ void thread_A_code(void *argA , void *argB, void *argC)
     while(1) {
         
         /* Do the workload */          
-        printk("\n\nThread A instance %ld released at time: %lld (ms). \n",++nact, k_uptime_get());  
+        printk("\n\nThread A instance %ld released at time: %lld (ms). \n", ++nact, k_uptime_get());  
         
-        ab++;
-        printk("Thread A set ab value to: %d \n",ab);  
+        for(int i = 0; i < 10; i++){
+          // DadosAB[i] = GUARGAR ULTIMOS 10 VALORES DO POTENCIOMETRO  
+        }
         
-        k_sem_give(&sem_ab);
-       
+        k_sem_give(&sem_ab); 
+
         /* Wait for next release instant */ 
         fin_time = k_uptime_get();
         if( fin_time < release_time) {
@@ -147,23 +151,39 @@ void thread_A_code(void *argA , void *argB, void *argC)
             release_time += thread_A_period;
         }
     }
-
 }
 
 void thread_B_code(void *argA , void *argB, void *argC)
 {
     /* Other variables */
     long int nact = 0;
+    int avg = 0;
+    int cnt = 0;
 
     printk("Thread B init (sporadic, waits on a semaphore by task A)\n");
     while(1) {
         k_sem_take(&sem_ab,  K_FOREVER);
-        printk("Thread B instance %ld released at time: %lld (ms). \n",++nact, k_uptime_get());  
-        printk("Task B read ab value: %d\n",ab);
-        bc++;
-        printk("Thread B set bc value to: %d \n",bc);  
+        printk("Thread B instance %ld released at time: %lld (ms). \n", ++nact, k_uptime_get());
+        
+        for(int i = 0; i < 10; i++){
+          avg += DadosAB[i];
+        }
+
+        avgmax = avg + avg*0.1;
+        avgmin = avg - avg*0.1;
+
+        for(int i = 0; i < 10; i++){
+          if(DadosAB[i] < avgmax || DadosAB[i] > avgmin) {
+            DadosBC += DadosAB[i];
+            cnt++;
+          }
+        }
+
+        DadosBC = DadosBC/cnt;
+        
+        printk("Thread B set BC value to: %d \n", DadosBC);
         k_sem_give(&sem_bc);
-  }
+    }
 }
 
 void thread_C_code(void *argA , void *argB, void *argC)
@@ -174,8 +194,14 @@ void thread_C_code(void *argA , void *argB, void *argC)
     printk("Thread C init (sporadic, waits on a semaphore by task A)\n");
     while(1) {
         k_sem_take(&sem_bc, K_FOREVER);
-        printk("Thread C instance %5ld released at time: %lld (ms). \n",++nact, k_uptime_get());          
-        printk("Task C read bc value: %d\n",bc);        
-  }
+        printk("Thread C instance %5ld released at time: %lld (ms). \n", ++nact, k_uptime_get());          
+        printk("Task C read BC value: %d\n", DadosBC); 
+        
+        ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*DadosBC)/100), PWM_POLARITY_NORMAL);
+        if (ret) {
+          printk("Error %d: failed to set pulse width\n", ret);
+          return;
+        }       
+    }
 }
 
