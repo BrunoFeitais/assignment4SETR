@@ -16,6 +16,16 @@
 #include <sys/printk.h>
 #include <sys/__assert.h>
 #include <string.h>
+#include <drivers/pwm.h>
+#include <timing/timing.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <devicetree.h>
+
+/* Refer to dts file */
+#define GPIO0_NID DT_NODELABEL(gpio0)
+#define PWM0_NID DT_NODELABEL(pwm0)
+#define BOARDLED1 0x0d /* Pin at which LED1 is connected.  Addressing is direct (i.e., pin number) */
 
 /* Size of stack area used by each thread (can be thread specific, if necessary)*/
 #define STACK_SIZE 1024
@@ -63,6 +73,29 @@ void thread_C_code(void *, void *, void *);
 /* Main function */
 void main(void) {
 
+    const struct device *pwm0_dev;          /* Pointer to PWM device structure */
+    int pwm0_channel  = 13;                 /* Ouput pin associated to pwm channel. See DTS for pwm channel - output pin association */ 
+    unsigned int pwmPeriod_us = 1000;       /* PWM period in us */
+    int ret = 0;
+    unsigned int dcValue[]={0,33,66,100};   /* Duty-cycle in % */
+    unsigned int dcIndex = 1;
+
+/*
+    pwm0_dev = device_get_binding(DT_LABEL(PWM0_NID));
+    if (pwm0_dev == NULL) {
+	printk("Error: PWM device %s is not ready\n", pwm0_dev->name);
+	return;
+    }
+    else  {
+        printk("PWM device %s is ready\n", pwm0_dev->name);            
+    }
+    ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*dcValue[dcIndex])/100), PWM_POLARITY_NORMAL);
+    if (ret) {
+      printk("Error %d: failed to set pulse width\n", ret);
+      return;
+    }
+*/
+
     /* Welcome message */
      printk("\n\r IPC via FIFO example \n\r");
     
@@ -109,6 +142,10 @@ void thread_A_code(void *argA , void *argB, void *argC)
         /* Do the workload */          
         printk("\n\nThread A instance %ld released at time: %lld (ms). \n",++nact, k_uptime_get());  
                 
+        for(int i = 0; i < 10; i++){
+          // DadosAB[i] = GUARGAR ULTIMOS 10 VALORES DO POTENCIOMETRO  
+        }
+
         data_ab.data = nact + 100;
         k_fifo_put(&fifo_ab, &data_ab);
         printk("Thread A data in fifo_ab: %d\n",data_ab.data);  
@@ -137,7 +174,22 @@ void thread_B_code(void *argA , void *argB, void *argC)
         data_ab = k_fifo_get(&fifo_ab, K_FOREVER);
     
         printk("Thread B instance %ld released at time: %lld (ms). \n",++nact, k_uptime_get());  
-        printk("Task B read fifo ab value: %d\n",data_ab->data);
+        
+        for(int i = 0; i < 10; i++){
+          avg += DadosAB[i];
+        }
+
+        avgmax = avg + avg*0.1;
+        avgmin = avg - avg*0.1;
+
+        for(int i = 0; i < 10; i++){
+          if(DadosAB[i] < avgmax || DadosAB[i] > avgmin) {
+            DadosBC += DadosAB[i];
+            cnt++;
+          }
+        }
+
+        DadosBC = DadosBC/cnt;
         
         data_bc.data = nact + 200;
 
@@ -158,6 +210,12 @@ void thread_C_code(void *argA , void *argB, void *argC)
         data_bc = k_fifo_get(&fifo_bc, K_FOREVER);
         printk("Thread C instance %5ld released at time: %lld (ms). \n",++nact, k_uptime_get());          
         printk("Task C read bc value: %d\n",data_bc->data);
+
+        ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*data_bc)/100), PWM_POLARITY_NORMAL);
+        if (ret) {
+          printk("Error %d: failed to set pulse width\n", ret);
+          return;
+        } 
             
   }
 }
