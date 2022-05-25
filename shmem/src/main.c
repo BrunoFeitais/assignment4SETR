@@ -75,25 +75,15 @@ void main(void) {
     int pwm0_channel  = 13;                 /* Ouput pin associated to pwm channel. See DTS for pwm channel - output pin association */ 
     unsigned int pwmPeriod_us = 1000;       /* PWM period in us */
     int ret = 0;
-    unsigned int dcValue[]={0,33,66,100};   /* Duty-cycle in % */
-    unsigned int dcIndex = 1;
-
-/*
+    
     pwm0_dev = device_get_binding(DT_LABEL(PWM0_NID));
     if (pwm0_dev == NULL) {
-	printk("Error: PWM device %s is not ready\n", pwm0_dev->name);
-	return;
-    }
-    else  {
-        printk("PWM device %s is ready\n", pwm0_dev->name);            
-    }
-    ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*dcValue[dcIndex])/100), PWM_POLARITY_NORMAL);
-    if (ret) {
-      printk("Error %d: failed to set pulse width\n", ret);
+      printk("Error: PWM device %s is not ready\n", pwm0_dev->name);
       return;
     }
-*/
-
+    else  {
+      printk("PWM device %s is ready\n", pwm0_dev->name);            
+    }
 
     /* Welcome message */
     printf("\n\r Illustration of the use of shmem + semaphores\n\r");
@@ -159,6 +149,9 @@ void thread_B_code(void *argA , void *argB, void *argC)
     long int nact = 0;
     int avg = 0;
     int cnt = 0;
+    int avgmax = 0;
+    int avgmin = 0;
+
 
     printk("Thread B init (sporadic, waits on a semaphore by task A)\n");
     while(1) {
@@ -190,18 +183,19 @@ void thread_C_code(void *argA , void *argB, void *argC)
 {
     /* Other variables */
     long int nact = 0;
+    int ret = 0;
 
     printk("Thread C init (sporadic, waits on a semaphore by task A)\n");
     while(1) {
         k_sem_take(&sem_bc, K_FOREVER);
         printk("Thread C instance %5ld released at time: %lld (ms). \n", ++nact, k_uptime_get());          
         printk("Task C read BC value: %d\n", DadosBC); 
-        
+
         ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*DadosBC)/100), PWM_POLARITY_NORMAL);
         if (ret) {
           printk("Error %d: failed to set pulse width\n", ret);
           return;
-        }       
+        }      
     }
 }
 
