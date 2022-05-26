@@ -21,6 +21,30 @@
 #include <stdio.h>
 #include <devicetree.h>
 
+
+
+
+
+
+/*ADC definitions and includes*/
+#include <hal/nrf_saadc.h>
+#define ADC_NID DT_NODELABEL(adc) 
+#define ADC_RESOLUTION 10
+#define ADC_GAIN ADC_GAIN_1_4
+#define ADC_REFERENCE ADC_REF_VDD_1_4
+#define ADC_ACQUISITION_TIME ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 40)
+#define ADC_CHANNEL_ID 1 
+
+/* This is the actual nRF ANx input to use. Note that a channel can be assigned to any ANx. In fact a channel can */
+/*    be assigned to two ANx, when differential reading is set (one ANx for the positive signal and the other one for the negative signal) */  
+/* Note also that the configuration of differnt channels is completely independent (gain, resolution, ref voltage, ...) */
+#define ADC_CHANNEL_INPUT NRF_SAADC_INPUT_AIN1  
+
+
+
+
+
+
 /* Refer to dts file */
 #define GPIO0_NID DT_NODELABEL(gpio0)
 #define PWM0_NID DT_NODELABEL(pwm0)
@@ -41,7 +65,31 @@
 K_THREAD_STACK_DEFINE(thread_A_stack, STACK_SIZE);
 K_THREAD_STACK_DEFINE(thread_B_stack, STACK_SIZE);
 K_THREAD_STACK_DEFINE(thread_C_stack, STACK_SIZE);
+
+
+
+
+
+
+/* ADC channel configuration */
+static const struct adc_channel_cfg my_channel_cfg = {
+	.gain = ADC_GAIN,
+	.reference = ADC_REFERENCE,
+	.acquisition_time = ADC_ACQUISITION_TIME,
+	.channel_id = ADC_CHANNEL_ID,
+	.input_positive = ADC_CHANNEL_INPUT
+};
+
+/* Global vars */
+struct k_timer my_timer;
+const struct device *adc_dev = NULL;
+static uint16_t adc_sample_buffer[BUFFER_SIZE];
   
+
+
+
+
+
 /* Create variables for thread data */
 struct k_thread thread_A_data;
 struct k_thread thread_B_data;
@@ -62,11 +110,45 @@ int bc = 200;
 struct k_sem sem_ab;
 struct k_sem sem_bc;
 
+
+
+
+
+
+/* Takes one sample */
+static int adc_sample(void)
+{
+	int ret;
+	const struct adc_sequence sequence = {
+		.channels = BIT(ADC_CHANNEL_ID),
+		.buffer = adc_sample_buffer,
+		.buffer_size = sizeof(adc_sample_buffer),
+		.resolution = ADC_RESOLUTION,
+	};
+
+	if (adc_dev == NULL) {
+            printk("adc_sample(): error, must bind to adc first \n\r");
+            return -1;
+	}
+
+	ret = adc_read(adc_dev, &sequence);
+	if (ret) {
+            printk("adc_read() failed with code %d\n", ret);
+	}	
+
+	return ret;
+}
+
+
+
+
+
+
+
 /* Thread code prototypes */
 void thread_A_code(void *argA, void *argB, void *argC);
 void thread_B_code(void *argA, void *argB, void *argC);
 void thread_C_code(void *argA, void *argB, void *argC);
-
 
 /* Main function */
 void main(void) {
@@ -84,6 +166,25 @@ void main(void) {
     else  {
       printk("PWM device %s is ready\n", pwm0_dev->name);            
     }
+
+
+
+
+
+    /* ADC setup: bind and initialize */
+    adc_dev = device_get_binding(DT_LABEL(ADC_NID));
+	if (!adc_dev) {
+        printk("ADC device_get_binding() failed\n");
+    } 
+    err = adc_channel_setup(adc_dev, &my_channel_cfg);
+    if (err) {
+        printk("adc_channel_setup() failed with error code %d\n", err);
+    }
+
+
+
+
+
 
     /* Welcome message */
     printf("\n\r Illustration of the use of shmem + semaphores\n\r");
@@ -124,12 +225,9 @@ void thread_A_code(void *argA , void *argB, void *argC)
 
     /* Thread loop */
     while(1) {
-        
-        /* Do the workload */          
-        printk("\n\nThread A instance %ld released at time: %lld (ms). \n", ++nact, k_uptime_get());  
-        
+
         for(int i = 0; i < 10; i++){
-          // DadosAB[i] = GUARGAR ULTIMOS 10 VALORES DO POTENCIOMETRO  
+          DadosAB[i] = adc_sample(); 
         }
         
         k_sem_give(&sem_ab); 
@@ -152,12 +250,9 @@ void thread_B_code(void *argA , void *argB, void *argC)
     int avgmax = 0;
     int avgmin = 0;
 
-
-    printk("Thread B init (sporadic, waits on a semaphore by task A)\n");
     while(1) {
         k_sem_take(&sem_ab,  K_FOREVER);
-        printk("Thread B instance %ld released at time: %lld (ms). \n", ++nact, k_uptime_get());
-        
+
         for(int i = 0; i < 10; i++){
           avg += DadosAB[i];
         }
@@ -174,7 +269,6 @@ void thread_B_code(void *argA , void *argB, void *argC)
 
         DadosBC = DadosBC/cnt;
         
-        printk("Thread B set BC value to: %d \n", DadosBC);
         k_sem_give(&sem_bc);
     }
 }
@@ -185,11 +279,8 @@ void thread_C_code(void *argA , void *argB, void *argC)
     long int nact = 0;
     int ret = 0;
 
-    printk("Thread C init (sporadic, waits on a semaphore by task A)\n");
     while(1) {
         k_sem_take(&sem_bc, K_FOREVER);
-        printk("Thread C instance %5ld released at time: %lld (ms). \n", ++nact, k_uptime_get());          
-        printk("Task C read BC value: %d\n", DadosBC); 
 
         ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*DadosBC)/100), PWM_POLARITY_NORMAL);
         if (ret) {
