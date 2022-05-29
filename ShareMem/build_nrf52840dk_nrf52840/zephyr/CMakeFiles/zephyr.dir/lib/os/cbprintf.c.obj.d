@@ -1,6 +1,6 @@
 zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf.c.obj: \
  C:/Users/bruno/ncs/v1.9.1/zephyr/lib/os/cbprintf.c \
- C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/toolchain/zephyr_stdint.h \
  c:\users\bruno\ncs\v1.9.1\toolchain\opt\lib\gcc\arm-none-eabi\9.2.1\include\stdarg.h \
  c:\users\bruno\ncs\v1.9.1\toolchain\opt\lib\gcc\arm-none-eabi\9.2.1\include\stddef.h \

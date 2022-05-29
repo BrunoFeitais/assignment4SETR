@@ -1,6 +1,6 @@
 zephyr/drivers/serial/CMakeFiles/drivers__serial.dir/uart_nrfx_uarte.c.obj: \
  C:/Users/bruno/ncs/v1.9.1/zephyr/drivers/serial/uart_nrfx_uarte.c \
- C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/toolchain/zephyr_stdint.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/drivers/uart.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/lib/libc/minimal/include/errno.h \

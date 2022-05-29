@@ -39,21 +39,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/subsys/net/cmake_install.cmake")
+  include("C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/subsys/net/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/subsys/dfu/cmake_install.cmake")
+  include("C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/subsys/dfu/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/subsys/debug/cmake_install.cmake")
+  include("C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/subsys/debug/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/subsys/partition_manager/cmake_install.cmake")
+  include("C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/subsys/partition_manager/cmake_install.cmake")
 endif()
 

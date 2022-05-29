@@ -1,6 +1,6 @@
-C:\Users\bruno\Desktop\SETR\ShareMem\build_nrf52840dk_nrf52840\Kconfig\Kconfig.modules
-C:\Users\bruno\Desktop\SETR\ShareMem\build_nrf52840dk_nrf52840\Kconfig\Kconfig.shield
-C:\Users\bruno\Desktop\SETR\ShareMem\build_nrf52840dk_nrf52840\Kconfig\Kconfig.shield.defconfig
+C:\Users\bruno\Desktop\SETR\RealTime\assignment4SETR\ShareMem\build_nrf52840dk_nrf52840\Kconfig\Kconfig.modules
+C:\Users\bruno\Desktop\SETR\RealTime\assignment4SETR\ShareMem\build_nrf52840dk_nrf52840\Kconfig\Kconfig.shield
+C:\Users\bruno\Desktop\SETR\RealTime\assignment4SETR\ShareMem\build_nrf52840dk_nrf52840\Kconfig\Kconfig.shield.defconfig
 C:\Users\bruno\ncs\v1.9.1\modules\debug\TraceRecorder\kernelports\Zephyr\Kconfig
 C:\Users\bruno\ncs\v1.9.1\modules\debug\TraceRecorder\kernelports\Zephyr\streamports\ARM_ITM\Kconfig
 C:\Users\bruno\ncs\v1.9.1\modules\debug\TraceRecorder\kernelports\Zephyr\streamports\Jlink_RTT\Kconfig

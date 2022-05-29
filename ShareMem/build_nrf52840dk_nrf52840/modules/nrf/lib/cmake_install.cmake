@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/lib/bin/cmake_install.cmake")
+  include("C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/lib/bin/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/lib/flash_patch/cmake_install.cmake")
+  include("C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/lib/flash_patch/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/lib/fatal_error/cmake_install.cmake")
+  include("C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/modules/nrf/lib/fatal_error/cmake_install.cmake")
 endif()
 

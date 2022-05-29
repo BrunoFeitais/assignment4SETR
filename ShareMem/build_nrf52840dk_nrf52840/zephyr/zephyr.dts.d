@@ -10,4 +10,4 @@ empty_file.o: C:/Users/bruno/ncs/v1.9.1/zephyr/misc/empty_file.c \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/dt-bindings/gpio/gpio.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/dt-bindings/pinctrl/nrf-pinctrl.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/dts/arm/nordic/override.dtsi \
- C:/Users/bruno/Desktop/SETR/ShareMem/nrf52840dk_nrf52840.overlay
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/nrf52840dk_nrf52840.overlay

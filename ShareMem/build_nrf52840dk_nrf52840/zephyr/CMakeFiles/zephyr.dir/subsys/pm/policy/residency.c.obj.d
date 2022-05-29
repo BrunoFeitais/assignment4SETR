@@ -1,6 +1,6 @@
 zephyr/CMakeFiles/zephyr.dir/subsys/pm/policy/residency.c.obj: \
  C:/Users/bruno/ncs/v1.9.1/zephyr/subsys/pm/policy/residency.c \
- C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/toolchain/zephyr_stdint.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/devicetree.h \
  zephyr/include/generated/devicetree_unfixed.h \

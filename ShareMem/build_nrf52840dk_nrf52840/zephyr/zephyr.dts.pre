@@ -880,7 +880,7 @@ zephyr_udc0: &usbd {
  status = "okay";
 };
 # 1 "<command-line>" 2
-# 1 "C:/Users/bruno/Desktop/SETR/ShareMem/nrf52840dk_nrf52840.overlay" 1
+# 1 "C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/nrf52840dk_nrf52840.overlay" 1
 &adc {
  status = "okay";
 };

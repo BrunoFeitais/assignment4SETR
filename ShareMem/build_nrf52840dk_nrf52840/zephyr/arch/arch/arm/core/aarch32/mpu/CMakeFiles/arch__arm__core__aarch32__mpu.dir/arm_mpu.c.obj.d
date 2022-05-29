@@ -1,6 +1,6 @@
 zephyr/arch/arch/arm/core/aarch32/mpu/CMakeFiles/arch__arm__core__aarch32__mpu.dir/arm_mpu.c.obj: \
  C:/Users/bruno/ncs/v1.9.1/zephyr/arch/arm/core/aarch32/mpu/arm_mpu.c \
- C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/toolchain/zephyr_stdint.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/device.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/init.h \

@@ -1,6 +1,6 @@
 zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir/clock_control_nrf.c.obj: \
  C:/Users/bruno/ncs/v1.9.1/zephyr/drivers/clock_control/clock_control_nrf.c \
- C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/toolchain/zephyr_stdint.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/soc/arm/nordic_nrf/nrf52/soc.h \
  c:\users\bruno\ncs\v1.9.1\zephyr\soc\arm\nordic_nrf\common\soc_nrf_common.h \

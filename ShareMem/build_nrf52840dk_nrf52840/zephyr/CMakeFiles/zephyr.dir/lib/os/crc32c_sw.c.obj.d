@@ -1,6 +1,6 @@
 zephyr/CMakeFiles/zephyr.dir/lib/os/crc32c_sw.c.obj: \
  C:/Users/bruno/ncs/v1.9.1/zephyr/lib/os/crc32c_sw.c \
- C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/toolchain/zephyr_stdint.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/sys/crc.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/zephyr/types.h \

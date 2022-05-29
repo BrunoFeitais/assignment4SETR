@@ -46,13 +46,6 @@ static const struct adc_channel_cfg my_channel_cfg = {
 	.input_positive = ADC_CHANNEL_INPUT
 };
 
-/* Global vars */
-struct k_timer my_timer;
-const struct device *adc_dev = NULL;
-static uint16_t adc_sample_buffer[BUFFER_SIZE];
-
-
-
 /* Refer to dts file */
 #define GPIO0_NID DT_NODELABEL(gpio0)
 #define PWM0_NID DT_NODELABEL(pwm0)
@@ -68,6 +61,11 @@ static uint16_t adc_sample_buffer[BUFFER_SIZE];
 
 /* Therad periodicity (in ms)*/
 #define thread_A_period 3000
+
+/* Global vars */
+struct k_timer my_timer;
+const struct device *adc_dev = NULL;
+static uint16_t adc_sample_buffer[BUFFER_SIZE];
 
 /* Create thread stack space */
 K_THREAD_STACK_DEFINE(thread_A_stack, STACK_SIZE);
@@ -93,9 +91,6 @@ int bc = 200;
 /* Semaphores for task synch */
 struct k_sem sem_ab;
 struct k_sem sem_bc;
-
-
-
 
 /* Takes one sample */
 static int adc_sample(void)
@@ -170,7 +165,7 @@ void main(void) {
         K_THREAD_STACK_SIZEOF(thread_B_stack), thread_B_code,
         NULL, NULL, NULL, thread_B_prio, 0, K_NO_WAIT);
 
-    thread_B_tid = k_thread_create(&thread_C_data, thread_C_stack,
+    thread_C_tid = k_thread_create(&thread_C_data, thread_C_stack,
         K_THREAD_STACK_SIZEOF(thread_C_stack), thread_C_code,
         NULL, NULL, NULL, thread_C_prio, 0, K_NO_WAIT);
 
@@ -186,14 +181,13 @@ void thread_A_code(void *argA , void *argB, void *argC)
     /* Other variables */
     long int nact = 0;
     int err = 0;
-    
-    printk("Leitura 10 amostras\n");
 
     /* Compute next release instant */
     release_time = k_uptime_get() + thread_A_period;
 
     /* Thread loop */
     while(1) {
+        printk("\n\nLeitura 10 amostras (Thread A)\n");
 
         for(int i = 0; i < 10; i++){
           err=adc_sample();
@@ -204,16 +198,13 @@ void thread_A_code(void *argA , void *argB, void *argC)
             if(adc_sample_buffer[0] > 1023) {
                 printk("adc reading out of range\n\r");
             }
-            else {
-                /* ADC is set to use gain of 1/4 and reference VDD/4, so input range is 0...VDD (3 V), with 10 bit resolution */
-                printk("adc reading: raw:%4u / %4u mV: \n\r",adc_sample_buffer[0],(uint16_t)(1000*adc_sample_buffer[0]*((float)3/1023)));
-            }
           }
-          DadosAB[i] = adc_sample_buffer[0]; 
+          DadosAB[i] = adc_sample_buffer[0];
+          printk("%d ", DadosAB[i]); 
         }
-        
-        k_sem_give(&sem_ab); 
 
+        k_sem_give(&sem_ab);
+        
         /* Wait for next release instant */ 
         fin_time = k_uptime_get();
         if( fin_time < release_time) {
@@ -227,32 +218,33 @@ void thread_B_code(void *argA , void *argB, void *argC)
 {
     /* Other variables */
     long int nact = 0;
-    int avg = 0;
-    int cnt = 0;
-    int avgmax = 0;
-    int avgmin = 0;
-
-    printk("Cálculo do valor final\n");
 
     while(1) {
         k_sem_take(&sem_ab,  K_FOREVER);
 
+        int avg = 0;
+        int cnt = 0;
+        int avgmax = 0;
+        int avgmin = 0;
+        int sum = 0;
+
+        printk("\nCalculo do valor final (Thread B)\n");
         for(int i = 0; i < 10; i++){
-          printk("%d ", DadosAB[i]);
           avg += DadosAB[i];
         }
+        avg = avg/10;
 
         avgmax = avg + avg*0.1;
         avgmin = avg - avg*0.1;
 
         for(int i = 0; i < 10; i++){
           if(DadosAB[i] < avgmax || DadosAB[i] > avgmin) {
-            DadosBC += DadosAB[i];
+            sum += DadosAB[i];
             cnt++;
           }
         }
 
-        DadosBC = DadosBC/cnt;
+        DadosBC = sum/cnt;
         
         k_sem_give(&sem_bc);
     }
@@ -264,11 +256,10 @@ void thread_C_code(void *argA , void *argB, void *argC)
     long int nact = 0;
     int ret = 0;
 
-    printk("Atribuir valor à LED\n");
-    printk("%d ", DadosBC);
-
     while(1) {
         k_sem_take(&sem_bc, K_FOREVER);
+
+        printk("Atribuir valor a LED: %d (Thread C)\n", DadosBC);
 
         /*ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*DadosBC)/100), PWM_POLARITY_NORMAL);
         if (ret) {

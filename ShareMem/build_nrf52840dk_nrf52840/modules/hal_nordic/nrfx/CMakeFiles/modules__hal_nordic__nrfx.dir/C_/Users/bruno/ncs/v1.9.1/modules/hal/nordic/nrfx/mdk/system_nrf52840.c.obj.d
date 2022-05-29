@@ -1,6 +1,6 @@
 modules/hal_nordic/nrfx/CMakeFiles/modules__hal_nordic__nrfx.dir/C_/Users/bruno/ncs/v1.9.1/modules/hal/nordic/nrfx/mdk/system_nrf52840.c.obj: \
  C:/Users/bruno/ncs/v1.9.1/modules/hal/nordic/nrfx/mdk/system_nrf52840.c \
- C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/toolchain/zephyr_stdint.h \
  C:/Users/bruno/ncs/v1.9.1/modules/hal/nordic/nrfx/mdk/system_nrf52.c \
  C:/Users/bruno/ncs/v1.9.1/zephyr/lib/libc/minimal/include/stdint.h \

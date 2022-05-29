@@ -1,6 +1,6 @@
 zephyr/soc/arm/common/cortex_m/CMakeFiles/soc__arm__common__cortex_m.dir/arm_mpu_regions.c.obj: \
  C:/Users/bruno/ncs/v1.9.1/zephyr/soc/arm/common/cortex_m/arm_mpu_regions.c \
- C:/Users/bruno/Desktop/SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
+ C:/Users/bruno/Desktop/SETR/RealTime/assignment4SETR/ShareMem/build_nrf52840dk_nrf52840/zephyr/include/generated/autoconf.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/toolchain/zephyr_stdint.h \
  C:/Users/bruno/ncs/v1.9.1/zephyr/include/sys/slist.h \
  c:\users\bruno\ncs\v1.9.1\toolchain\opt\lib\gcc\arm-none-eabi\9.2.1\include\stddef.h \
