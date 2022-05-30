@@ -1,0 +1,36 @@
+\hypertarget{kscan_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/kscan.h File Reference}
+\label{kscan_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/kscan.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/kscan.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kscan_8h_a8b63fe281d6acfe5371c6bd495b54b6f}{z\+\_\+impl\+\_\+kscan\+\_\+config}} (const struct device $\ast$dev, kscan\+\_\+callback\+\_\+t callback)
+\item 
+int \mbox{\hyperlink{kscan_8h_ac8c21df93d215d3d02fe012b3a89ea59}{z\+\_\+impl\+\_\+kscan\+\_\+enable\+\_\+callback}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{kscan_8h_a08b79fb73b523decd61aab8b903308bb}{z\+\_\+impl\+\_\+kscan\+\_\+disable\+\_\+callback}} (const struct device $\ast$dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kscan_8h_a8b63fe281d6acfe5371c6bd495b54b6f}\label{kscan_8h_a8b63fe281d6acfe5371c6bd495b54b6f}} 
+\index{kscan.h@{kscan.h}!z\_impl\_kscan\_config@{z\_impl\_kscan\_config}}
+\index{z\_impl\_kscan\_config@{z\_impl\_kscan\_config}!kscan.h@{kscan.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_kscan\_config()}{z\_impl\_kscan\_config()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+kscan\+\_\+config (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{kscan\+\_\+callback\+\_\+t}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{kscan_8h_a08b79fb73b523decd61aab8b903308bb}\label{kscan_8h_a08b79fb73b523decd61aab8b903308bb}} 
+\index{kscan.h@{kscan.h}!z\_impl\_kscan\_disable\_callback@{z\_impl\_kscan\_disable\_callback}}
+\index{z\_impl\_kscan\_disable\_callback@{z\_impl\_kscan\_disable\_callback}!kscan.h@{kscan.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_kscan\_disable\_callback()}{z\_impl\_kscan\_disable\_callback()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+kscan\+\_\+disable\+\_\+callback (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{kscan_8h_ac8c21df93d215d3d02fe012b3a89ea59}\label{kscan_8h_ac8c21df93d215d3d02fe012b3a89ea59}} 
+\index{kscan.h@{kscan.h}!z\_impl\_kscan\_enable\_callback@{z\_impl\_kscan\_enable\_callback}}
+\index{z\_impl\_kscan\_enable\_callback@{z\_impl\_kscan\_enable\_callback}!kscan.h@{kscan.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_kscan\_enable\_callback()}{z\_impl\_kscan\_enable\_callback()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+kscan\+\_\+enable\+\_\+callback (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+

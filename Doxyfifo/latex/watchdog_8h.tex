@@ -1,0 +1,36 @@
+\hypertarget{watchdog_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/watchdog.h File Reference}
+\label{watchdog_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/watchdog.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/watchdog.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{watchdog_8h_a6461ca63170a16f77e34618f7b982128}{z\+\_\+impl\+\_\+wdt\+\_\+setup}} (const struct device $\ast$dev, uint8\+\_\+t options)
+\item 
+int \mbox{\hyperlink{watchdog_8h_aea81a9c26fab4259fd6cf391ac53a627}{z\+\_\+impl\+\_\+wdt\+\_\+disable}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{watchdog_8h_acccd4994852abaf4a4a8ba0a471fe52d}{z\+\_\+impl\+\_\+wdt\+\_\+feed}} (const struct device $\ast$dev, int channel\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{watchdog_8h_aea81a9c26fab4259fd6cf391ac53a627}\label{watchdog_8h_aea81a9c26fab4259fd6cf391ac53a627}} 
+\index{watchdog.h@{watchdog.h}!z\_impl\_wdt\_disable@{z\_impl\_wdt\_disable}}
+\index{z\_impl\_wdt\_disable@{z\_impl\_wdt\_disable}!watchdog.h@{watchdog.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_wdt\_disable()}{z\_impl\_wdt\_disable()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+wdt\+\_\+disable (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{watchdog_8h_acccd4994852abaf4a4a8ba0a471fe52d}\label{watchdog_8h_acccd4994852abaf4a4a8ba0a471fe52d}} 
+\index{watchdog.h@{watchdog.h}!z\_impl\_wdt\_feed@{z\_impl\_wdt\_feed}}
+\index{z\_impl\_wdt\_feed@{z\_impl\_wdt\_feed}!watchdog.h@{watchdog.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_wdt\_feed()}{z\_impl\_wdt\_feed()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+wdt\+\_\+feed (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{int}]{channel\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{watchdog_8h_a6461ca63170a16f77e34618f7b982128}\label{watchdog_8h_a6461ca63170a16f77e34618f7b982128}} 
+\index{watchdog.h@{watchdog.h}!z\_impl\_wdt\_setup@{z\_impl\_wdt\_setup}}
+\index{z\_impl\_wdt\_setup@{z\_impl\_wdt\_setup}!watchdog.h@{watchdog.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_wdt\_setup()}{z\_impl\_wdt\_setup()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+wdt\+\_\+setup (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint8\+\_\+t}]{options }\end{DoxyParamCaption})}
+

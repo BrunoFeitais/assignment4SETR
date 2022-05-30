@@ -1,0 +1,44 @@
+\hypertarget{hwinfo_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/hwinfo.h File Reference}
+\label{hwinfo_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/hwinfo.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/hwinfo.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ssize\+\_\+t \mbox{\hyperlink{hwinfo_8h_a543db2a736f5e6c03445aa03c1a66905}{z\+\_\+impl\+\_\+hwinfo\+\_\+get\+\_\+device\+\_\+id}} (uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\item 
+int \mbox{\hyperlink{hwinfo_8h_a76ef597876532f5ed04f93b21cc4d43f}{z\+\_\+impl\+\_\+hwinfo\+\_\+get\+\_\+reset\+\_\+cause}} (uint32\+\_\+t $\ast$cause)
+\item 
+int \mbox{\hyperlink{hwinfo_8h_a0dc53b2609e6f5fbfc9e31f79ea2bdd8}{z\+\_\+impl\+\_\+hwinfo\+\_\+clear\+\_\+reset\+\_\+cause}} (void)
+\item 
+int \mbox{\hyperlink{hwinfo_8h_af9b9842fe09800291e83227033045e3c}{z\+\_\+impl\+\_\+hwinfo\+\_\+get\+\_\+supported\+\_\+reset\+\_\+cause}} (uint32\+\_\+t $\ast$supported)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hwinfo_8h_a0dc53b2609e6f5fbfc9e31f79ea2bdd8}\label{hwinfo_8h_a0dc53b2609e6f5fbfc9e31f79ea2bdd8}} 
+\index{hwinfo.h@{hwinfo.h}!z\_impl\_hwinfo\_clear\_reset\_cause@{z\_impl\_hwinfo\_clear\_reset\_cause}}
+\index{z\_impl\_hwinfo\_clear\_reset\_cause@{z\_impl\_hwinfo\_clear\_reset\_cause}!hwinfo.h@{hwinfo.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_hwinfo\_clear\_reset\_cause()}{z\_impl\_hwinfo\_clear\_reset\_cause()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+hwinfo\+\_\+clear\+\_\+reset\+\_\+cause (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hwinfo_8h_a543db2a736f5e6c03445aa03c1a66905}\label{hwinfo_8h_a543db2a736f5e6c03445aa03c1a66905}} 
+\index{hwinfo.h@{hwinfo.h}!z\_impl\_hwinfo\_get\_device\_id@{z\_impl\_hwinfo\_get\_device\_id}}
+\index{z\_impl\_hwinfo\_get\_device\_id@{z\_impl\_hwinfo\_get\_device\_id}!hwinfo.h@{hwinfo.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_hwinfo\_get\_device\_id()}{z\_impl\_hwinfo\_get\_device\_id()}}
+{\footnotesize\ttfamily ssize\+\_\+t z\+\_\+impl\+\_\+hwinfo\+\_\+get\+\_\+device\+\_\+id (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hwinfo_8h_a76ef597876532f5ed04f93b21cc4d43f}\label{hwinfo_8h_a76ef597876532f5ed04f93b21cc4d43f}} 
+\index{hwinfo.h@{hwinfo.h}!z\_impl\_hwinfo\_get\_reset\_cause@{z\_impl\_hwinfo\_get\_reset\_cause}}
+\index{z\_impl\_hwinfo\_get\_reset\_cause@{z\_impl\_hwinfo\_get\_reset\_cause}!hwinfo.h@{hwinfo.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_hwinfo\_get\_reset\_cause()}{z\_impl\_hwinfo\_get\_reset\_cause()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+hwinfo\+\_\+get\+\_\+reset\+\_\+cause (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{cause }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hwinfo_8h_af9b9842fe09800291e83227033045e3c}\label{hwinfo_8h_af9b9842fe09800291e83227033045e3c}} 
+\index{hwinfo.h@{hwinfo.h}!z\_impl\_hwinfo\_get\_supported\_reset\_cause@{z\_impl\_hwinfo\_get\_supported\_reset\_cause}}
+\index{z\_impl\_hwinfo\_get\_supported\_reset\_cause@{z\_impl\_hwinfo\_get\_supported\_reset\_cause}!hwinfo.h@{hwinfo.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_hwinfo\_get\_supported\_reset\_cause()}{z\_impl\_hwinfo\_get\_supported\_reset\_cause()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+hwinfo\+\_\+get\+\_\+supported\+\_\+reset\+\_\+cause (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{supported }\end{DoxyParamCaption})}
+

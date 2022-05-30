@@ -1,0 +1,84 @@
+\hypertarget{can_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/can.h File Reference}
+\label{can_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/can.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/can.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{can_8h_a20dea3903273f5710219f9489da07abe}{z\+\_\+impl\+\_\+can\+\_\+get\+\_\+core\+\_\+clock}} (const struct device $\ast$dev, uint32\+\_\+t $\ast$rate)
+\item 
+int \mbox{\hyperlink{can_8h_a4b57c9a9d872d56131f53b5061764a6d}{z\+\_\+impl\+\_\+can\+\_\+set\+\_\+timing}} (const struct device $\ast$dev, const struct can\+\_\+timing $\ast$timing, const struct can\+\_\+timing $\ast$timing\+\_\+data)
+\item 
+int \mbox{\hyperlink{can_8h_a2d41b9563225399d0884744a2813da33}{z\+\_\+impl\+\_\+can\+\_\+set\+\_\+mode}} (const struct device $\ast$dev, enum can\+\_\+mode mode)
+\item 
+int \mbox{\hyperlink{can_8h_afc3cfea627d5ba9e78fa23cc4da13be7}{z\+\_\+impl\+\_\+can\+\_\+send}} (const struct device $\ast$dev, const struct zcan\+\_\+frame $\ast$frame, k\+\_\+timeout\+\_\+t timeout, can\+\_\+tx\+\_\+callback\+\_\+t callback, void $\ast$user\+\_\+data)
+\item 
+int \mbox{\hyperlink{can_8h_adf2a67edae9afc91e4043f23e2a5f87c}{z\+\_\+impl\+\_\+can\+\_\+attach\+\_\+msgq}} (const struct device $\ast$dev, struct k\+\_\+msgq $\ast$msg\+\_\+q, const struct zcan\+\_\+filter $\ast$filter)
+\item 
+void \mbox{\hyperlink{can_8h_a7ae8166c4d4d3cc37333abdb331a82f5}{z\+\_\+impl\+\_\+can\+\_\+detach}} (const struct device $\ast$dev, int filter\+\_\+id)
+\item 
+int \mbox{\hyperlink{can_8h_adcda3dbea902b98f34896b0d06100d94}{z\+\_\+impl\+\_\+can\+\_\+get\+\_\+max\+\_\+filters}} (const struct device $\ast$dev, enum can\+\_\+ide id\+\_\+type)
+\item 
+enum can\+\_\+state \mbox{\hyperlink{can_8h_adef95a31b985380b92163370b7197933}{z\+\_\+impl\+\_\+can\+\_\+get\+\_\+state}} (const struct device $\ast$dev, struct can\+\_\+bus\+\_\+err\+\_\+cnt $\ast$err\+\_\+cnt)
+\item 
+int \mbox{\hyperlink{can_8h_a1ba47b9eccb5651ad3d55d47ae47aa88}{z\+\_\+impl\+\_\+can\+\_\+recover}} (const struct device $\ast$dev, k\+\_\+timeout\+\_\+t timeout)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{can_8h_adf2a67edae9afc91e4043f23e2a5f87c}\label{can_8h_adf2a67edae9afc91e4043f23e2a5f87c}} 
+\index{can.h@{can.h}!z\_impl\_can\_attach\_msgq@{z\_impl\_can\_attach\_msgq}}
+\index{z\_impl\_can\_attach\_msgq@{z\_impl\_can\_attach\_msgq}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_attach\_msgq()}{z\_impl\_can\_attach\_msgq()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+can\+\_\+attach\+\_\+msgq (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{struct k\+\_\+msgq $\ast$}]{msg\+\_\+q,  }\item[{const struct zcan\+\_\+filter $\ast$}]{filter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_8h_a7ae8166c4d4d3cc37333abdb331a82f5}\label{can_8h_a7ae8166c4d4d3cc37333abdb331a82f5}} 
+\index{can.h@{can.h}!z\_impl\_can\_detach@{z\_impl\_can\_detach}}
+\index{z\_impl\_can\_detach@{z\_impl\_can\_detach}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_detach()}{z\_impl\_can\_detach()}}
+{\footnotesize\ttfamily void z\+\_\+impl\+\_\+can\+\_\+detach (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{int}]{filter\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_8h_a20dea3903273f5710219f9489da07abe}\label{can_8h_a20dea3903273f5710219f9489da07abe}} 
+\index{can.h@{can.h}!z\_impl\_can\_get\_core\_clock@{z\_impl\_can\_get\_core\_clock}}
+\index{z\_impl\_can\_get\_core\_clock@{z\_impl\_can\_get\_core\_clock}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_get\_core\_clock()}{z\_impl\_can\_get\_core\_clock()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+can\+\_\+get\+\_\+core\+\_\+clock (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t $\ast$}]{rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_8h_adcda3dbea902b98f34896b0d06100d94}\label{can_8h_adcda3dbea902b98f34896b0d06100d94}} 
+\index{can.h@{can.h}!z\_impl\_can\_get\_max\_filters@{z\_impl\_can\_get\_max\_filters}}
+\index{z\_impl\_can\_get\_max\_filters@{z\_impl\_can\_get\_max\_filters}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_get\_max\_filters()}{z\_impl\_can\_get\_max\_filters()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+can\+\_\+get\+\_\+max\+\_\+filters (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{enum can\+\_\+ide}]{id\+\_\+type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_8h_adef95a31b985380b92163370b7197933}\label{can_8h_adef95a31b985380b92163370b7197933}} 
+\index{can.h@{can.h}!z\_impl\_can\_get\_state@{z\_impl\_can\_get\_state}}
+\index{z\_impl\_can\_get\_state@{z\_impl\_can\_get\_state}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_get\_state()}{z\_impl\_can\_get\_state()}}
+{\footnotesize\ttfamily enum can\+\_\+state z\+\_\+impl\+\_\+can\+\_\+get\+\_\+state (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{struct can\+\_\+bus\+\_\+err\+\_\+cnt $\ast$}]{err\+\_\+cnt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_8h_a1ba47b9eccb5651ad3d55d47ae47aa88}\label{can_8h_a1ba47b9eccb5651ad3d55d47ae47aa88}} 
+\index{can.h@{can.h}!z\_impl\_can\_recover@{z\_impl\_can\_recover}}
+\index{z\_impl\_can\_recover@{z\_impl\_can\_recover}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_recover()}{z\_impl\_can\_recover()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+can\+\_\+recover (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{k\+\_\+timeout\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_8h_afc3cfea627d5ba9e78fa23cc4da13be7}\label{can_8h_afc3cfea627d5ba9e78fa23cc4da13be7}} 
+\index{can.h@{can.h}!z\_impl\_can\_send@{z\_impl\_can\_send}}
+\index{z\_impl\_can\_send@{z\_impl\_can\_send}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_send()}{z\_impl\_can\_send()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+can\+\_\+send (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{const struct zcan\+\_\+frame $\ast$}]{frame,  }\item[{k\+\_\+timeout\+\_\+t}]{timeout,  }\item[{can\+\_\+tx\+\_\+callback\+\_\+t}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_8h_a2d41b9563225399d0884744a2813da33}\label{can_8h_a2d41b9563225399d0884744a2813da33}} 
+\index{can.h@{can.h}!z\_impl\_can\_set\_mode@{z\_impl\_can\_set\_mode}}
+\index{z\_impl\_can\_set\_mode@{z\_impl\_can\_set\_mode}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_set\_mode()}{z\_impl\_can\_set\_mode()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+can\+\_\+set\+\_\+mode (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{enum can\+\_\+mode}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{can_8h_a4b57c9a9d872d56131f53b5061764a6d}\label{can_8h_a4b57c9a9d872d56131f53b5061764a6d}} 
+\index{can.h@{can.h}!z\_impl\_can\_set\_timing@{z\_impl\_can\_set\_timing}}
+\index{z\_impl\_can\_set\_timing@{z\_impl\_can\_set\_timing}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_can\_set\_timing()}{z\_impl\_can\_set\_timing()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+can\+\_\+set\+\_\+timing (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{const struct can\+\_\+timing $\ast$}]{timing,  }\item[{const struct can\+\_\+timing $\ast$}]{timing\+\_\+data }\end{DoxyParamCaption})}
+

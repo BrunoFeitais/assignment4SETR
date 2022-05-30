@@ -1,0 +1,172 @@
+\hypertarget{socket_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/socket.h File Reference}
+\label{socket_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/socket.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/socket.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{socket_8h_a1d36076b7d0242d0f857b96a800912d8}{z\+\_\+impl\+\_\+zsock\+\_\+get\+\_\+context\+\_\+object}} (int sock)
+\item 
+int \mbox{\hyperlink{socket_8h_a578d0e2c462da526f000a68830ff6db6}{z\+\_\+impl\+\_\+zsock\+\_\+socket}} (int family, int type, int proto)
+\item 
+int \mbox{\hyperlink{socket_8h_ab1fcc4ea0958844b7533b5736a1a9bcf}{z\+\_\+impl\+\_\+zsock\+\_\+socketpair}} (int family, int type, int proto, int $\ast$sv)
+\item 
+int \mbox{\hyperlink{socket_8h_ac4780ce50f888d01b91a7be14093c88a}{z\+\_\+impl\+\_\+zsock\+\_\+close}} (int sock)
+\item 
+int \mbox{\hyperlink{socket_8h_a2588036b665d007e005d578b2b62e9c5}{z\+\_\+impl\+\_\+zsock\+\_\+shutdown}} (int sock, int how)
+\item 
+int \mbox{\hyperlink{socket_8h_aa27f2e7d84ffd3274776cca1bd6d83b9}{z\+\_\+impl\+\_\+zsock\+\_\+bind}} (int sock, const struct sockaddr $\ast$addr, socklen\+\_\+t addrlen)
+\item 
+int \mbox{\hyperlink{socket_8h_a0c8277808788196937dcf318885c3b18}{z\+\_\+impl\+\_\+zsock\+\_\+connect}} (int sock, const struct sockaddr $\ast$addr, socklen\+\_\+t addrlen)
+\item 
+int \mbox{\hyperlink{socket_8h_af2283180d8742fe1eb38626b4462b300}{z\+\_\+impl\+\_\+zsock\+\_\+listen}} (int sock, int backlog)
+\item 
+int \mbox{\hyperlink{socket_8h_aa7baf1c6429cd549b002c8165ea174fa}{z\+\_\+impl\+\_\+zsock\+\_\+accept}} (int sock, struct sockaddr $\ast$addr, socklen\+\_\+t $\ast$addrlen)
+\item 
+ssize\+\_\+t \mbox{\hyperlink{socket_8h_a2166f680f329bf7588dd72e59c69532e}{z\+\_\+impl\+\_\+zsock\+\_\+sendto}} (int sock, const void $\ast$buf, size\+\_\+t len, int flags, const struct sockaddr $\ast$dest\+\_\+addr, socklen\+\_\+t addrlen)
+\item 
+ssize\+\_\+t \mbox{\hyperlink{socket_8h_a0af9db200208f7bbb5d28c4a99d8c458}{z\+\_\+impl\+\_\+zsock\+\_\+sendmsg}} (int sock, const struct msghdr $\ast$msg, int flags)
+\item 
+ssize\+\_\+t \mbox{\hyperlink{socket_8h_a76be95df3feeeceed52bdf161f28b417}{z\+\_\+impl\+\_\+zsock\+\_\+recvfrom}} (int sock, void $\ast$buf, size\+\_\+t max\+\_\+len, int flags, struct sockaddr $\ast$src\+\_\+addr, socklen\+\_\+t $\ast$addrlen)
+\item 
+int \mbox{\hyperlink{socket_8h_a956d3ac5a5f9d3aa0e008c8bb417fb25}{z\+\_\+impl\+\_\+zsock\+\_\+fcntl}} (int sock, int cmd, int flags)
+\item 
+int \mbox{\hyperlink{socket_8h_ad20dba42826dc081ba95df01174f82ef}{z\+\_\+impl\+\_\+zsock\+\_\+poll}} (struct zsock\+\_\+pollfd $\ast$fds, int nfds, int timeout)
+\item 
+int \mbox{\hyperlink{socket_8h_a25442860c3774e0fc8b3962073413b18}{z\+\_\+impl\+\_\+zsock\+\_\+getsockopt}} (int sock, int level, int optname, void $\ast$optval, socklen\+\_\+t $\ast$optlen)
+\item 
+int \mbox{\hyperlink{socket_8h_a5f718448df8c0ad3273bca977c97f068}{z\+\_\+impl\+\_\+zsock\+\_\+setsockopt}} (int sock, int level, int optname, const void $\ast$optval, socklen\+\_\+t optlen)
+\item 
+int \mbox{\hyperlink{socket_8h_a1fe4d070dfce9454dbd80166bfa81e6b}{z\+\_\+impl\+\_\+zsock\+\_\+getsockname}} (int sock, struct sockaddr $\ast$addr, socklen\+\_\+t $\ast$addrlen)
+\item 
+int \mbox{\hyperlink{socket_8h_a54852704fca9b76d39ce70846ba68d72}{z\+\_\+impl\+\_\+zsock\+\_\+gethostname}} (char $\ast$buf, size\+\_\+t len)
+\item 
+int \mbox{\hyperlink{socket_8h_a857fff10054e3b076c74ccb48c2d32c8}{z\+\_\+impl\+\_\+zsock\+\_\+inet\+\_\+pton}} (sa\+\_\+family\+\_\+t family, const char $\ast$src, void $\ast$dst)
+\item 
+int \mbox{\hyperlink{socket_8h_ab2ee6f64e7d0441ec8134c83ef8ba4ca}{z\+\_\+impl\+\_\+z\+\_\+zsock\+\_\+getaddrinfo\+\_\+internal}} (const char $\ast$host, const char $\ast$service, const struct zsock\+\_\+addrinfo $\ast$hints, struct zsock\+\_\+addrinfo $\ast$res)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{socket_8h_ab2ee6f64e7d0441ec8134c83ef8ba4ca}\label{socket_8h_ab2ee6f64e7d0441ec8134c83ef8ba4ca}} 
+\index{socket.h@{socket.h}!z\_impl\_z\_zsock\_getaddrinfo\_internal@{z\_impl\_z\_zsock\_getaddrinfo\_internal}}
+\index{z\_impl\_z\_zsock\_getaddrinfo\_internal@{z\_impl\_z\_zsock\_getaddrinfo\_internal}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_z\_zsock\_getaddrinfo\_internal()}{z\_impl\_z\_zsock\_getaddrinfo\_internal()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+z\+\_\+zsock\+\_\+getaddrinfo\+\_\+internal (\begin{DoxyParamCaption}\item[{const char $\ast$}]{host,  }\item[{const char $\ast$}]{service,  }\item[{const struct zsock\+\_\+addrinfo $\ast$}]{hints,  }\item[{struct zsock\+\_\+addrinfo $\ast$}]{res }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_aa7baf1c6429cd549b002c8165ea174fa}\label{socket_8h_aa7baf1c6429cd549b002c8165ea174fa}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_accept@{z\_impl\_zsock\_accept}}
+\index{z\_impl\_zsock\_accept@{z\_impl\_zsock\_accept}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_accept()}{z\_impl\_zsock\_accept()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+accept (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{struct sockaddr $\ast$}]{addr,  }\item[{socklen\+\_\+t $\ast$}]{addrlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_aa27f2e7d84ffd3274776cca1bd6d83b9}\label{socket_8h_aa27f2e7d84ffd3274776cca1bd6d83b9}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_bind@{z\_impl\_zsock\_bind}}
+\index{z\_impl\_zsock\_bind@{z\_impl\_zsock\_bind}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_bind()}{z\_impl\_zsock\_bind()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+bind (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{const struct sockaddr $\ast$}]{addr,  }\item[{socklen\+\_\+t}]{addrlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_ac4780ce50f888d01b91a7be14093c88a}\label{socket_8h_ac4780ce50f888d01b91a7be14093c88a}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_close@{z\_impl\_zsock\_close}}
+\index{z\_impl\_zsock\_close@{z\_impl\_zsock\_close}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_close()}{z\_impl\_zsock\_close()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+close (\begin{DoxyParamCaption}\item[{int}]{sock }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a0c8277808788196937dcf318885c3b18}\label{socket_8h_a0c8277808788196937dcf318885c3b18}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_connect@{z\_impl\_zsock\_connect}}
+\index{z\_impl\_zsock\_connect@{z\_impl\_zsock\_connect}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_connect()}{z\_impl\_zsock\_connect()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+connect (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{const struct sockaddr $\ast$}]{addr,  }\item[{socklen\+\_\+t}]{addrlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a956d3ac5a5f9d3aa0e008c8bb417fb25}\label{socket_8h_a956d3ac5a5f9d3aa0e008c8bb417fb25}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_fcntl@{z\_impl\_zsock\_fcntl}}
+\index{z\_impl\_zsock\_fcntl@{z\_impl\_zsock\_fcntl}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_fcntl()}{z\_impl\_zsock\_fcntl()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+fcntl (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{int}]{cmd,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a1d36076b7d0242d0f857b96a800912d8}\label{socket_8h_a1d36076b7d0242d0f857b96a800912d8}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_get\_context\_object@{z\_impl\_zsock\_get\_context\_object}}
+\index{z\_impl\_zsock\_get\_context\_object@{z\_impl\_zsock\_get\_context\_object}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_get\_context\_object()}{z\_impl\_zsock\_get\_context\_object()}}
+{\footnotesize\ttfamily void $\ast$ z\+\_\+impl\+\_\+zsock\+\_\+get\+\_\+context\+\_\+object (\begin{DoxyParamCaption}\item[{int}]{sock }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a54852704fca9b76d39ce70846ba68d72}\label{socket_8h_a54852704fca9b76d39ce70846ba68d72}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_gethostname@{z\_impl\_zsock\_gethostname}}
+\index{z\_impl\_zsock\_gethostname@{z\_impl\_zsock\_gethostname}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_gethostname()}{z\_impl\_zsock\_gethostname()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+gethostname (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a1fe4d070dfce9454dbd80166bfa81e6b}\label{socket_8h_a1fe4d070dfce9454dbd80166bfa81e6b}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_getsockname@{z\_impl\_zsock\_getsockname}}
+\index{z\_impl\_zsock\_getsockname@{z\_impl\_zsock\_getsockname}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_getsockname()}{z\_impl\_zsock\_getsockname()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+getsockname (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{struct sockaddr $\ast$}]{addr,  }\item[{socklen\+\_\+t $\ast$}]{addrlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a25442860c3774e0fc8b3962073413b18}\label{socket_8h_a25442860c3774e0fc8b3962073413b18}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_getsockopt@{z\_impl\_zsock\_getsockopt}}
+\index{z\_impl\_zsock\_getsockopt@{z\_impl\_zsock\_getsockopt}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_getsockopt()}{z\_impl\_zsock\_getsockopt()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+getsockopt (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{int}]{level,  }\item[{int}]{optname,  }\item[{void $\ast$}]{optval,  }\item[{socklen\+\_\+t $\ast$}]{optlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a857fff10054e3b076c74ccb48c2d32c8}\label{socket_8h_a857fff10054e3b076c74ccb48c2d32c8}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_inet\_pton@{z\_impl\_zsock\_inet\_pton}}
+\index{z\_impl\_zsock\_inet\_pton@{z\_impl\_zsock\_inet\_pton}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_inet\_pton()}{z\_impl\_zsock\_inet\_pton()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+inet\+\_\+pton (\begin{DoxyParamCaption}\item[{sa\+\_\+family\+\_\+t}]{family,  }\item[{const char $\ast$}]{src,  }\item[{void $\ast$}]{dst }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_af2283180d8742fe1eb38626b4462b300}\label{socket_8h_af2283180d8742fe1eb38626b4462b300}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_listen@{z\_impl\_zsock\_listen}}
+\index{z\_impl\_zsock\_listen@{z\_impl\_zsock\_listen}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_listen()}{z\_impl\_zsock\_listen()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+listen (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{int}]{backlog }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_ad20dba42826dc081ba95df01174f82ef}\label{socket_8h_ad20dba42826dc081ba95df01174f82ef}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_poll@{z\_impl\_zsock\_poll}}
+\index{z\_impl\_zsock\_poll@{z\_impl\_zsock\_poll}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_poll()}{z\_impl\_zsock\_poll()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+poll (\begin{DoxyParamCaption}\item[{struct zsock\+\_\+pollfd $\ast$}]{fds,  }\item[{int}]{nfds,  }\item[{int}]{timeout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a76be95df3feeeceed52bdf161f28b417}\label{socket_8h_a76be95df3feeeceed52bdf161f28b417}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_recvfrom@{z\_impl\_zsock\_recvfrom}}
+\index{z\_impl\_zsock\_recvfrom@{z\_impl\_zsock\_recvfrom}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_recvfrom()}{z\_impl\_zsock\_recvfrom()}}
+{\footnotesize\ttfamily ssize\+\_\+t z\+\_\+impl\+\_\+zsock\+\_\+recvfrom (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{void $\ast$}]{buf,  }\item[{size\+\_\+t}]{max\+\_\+len,  }\item[{int}]{flags,  }\item[{struct sockaddr $\ast$}]{src\+\_\+addr,  }\item[{socklen\+\_\+t $\ast$}]{addrlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a0af9db200208f7bbb5d28c4a99d8c458}\label{socket_8h_a0af9db200208f7bbb5d28c4a99d8c458}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_sendmsg@{z\_impl\_zsock\_sendmsg}}
+\index{z\_impl\_zsock\_sendmsg@{z\_impl\_zsock\_sendmsg}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_sendmsg()}{z\_impl\_zsock\_sendmsg()}}
+{\footnotesize\ttfamily ssize\+\_\+t z\+\_\+impl\+\_\+zsock\+\_\+sendmsg (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{const struct msghdr $\ast$}]{msg,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a2166f680f329bf7588dd72e59c69532e}\label{socket_8h_a2166f680f329bf7588dd72e59c69532e}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_sendto@{z\_impl\_zsock\_sendto}}
+\index{z\_impl\_zsock\_sendto@{z\_impl\_zsock\_sendto}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_sendto()}{z\_impl\_zsock\_sendto()}}
+{\footnotesize\ttfamily ssize\+\_\+t z\+\_\+impl\+\_\+zsock\+\_\+sendto (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{int}]{flags,  }\item[{const struct sockaddr $\ast$}]{dest\+\_\+addr,  }\item[{socklen\+\_\+t}]{addrlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a5f718448df8c0ad3273bca977c97f068}\label{socket_8h_a5f718448df8c0ad3273bca977c97f068}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_setsockopt@{z\_impl\_zsock\_setsockopt}}
+\index{z\_impl\_zsock\_setsockopt@{z\_impl\_zsock\_setsockopt}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_setsockopt()}{z\_impl\_zsock\_setsockopt()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+setsockopt (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{int}]{level,  }\item[{int}]{optname,  }\item[{const void $\ast$}]{optval,  }\item[{socklen\+\_\+t}]{optlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a2588036b665d007e005d578b2b62e9c5}\label{socket_8h_a2588036b665d007e005d578b2b62e9c5}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_shutdown@{z\_impl\_zsock\_shutdown}}
+\index{z\_impl\_zsock\_shutdown@{z\_impl\_zsock\_shutdown}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_shutdown()}{z\_impl\_zsock\_shutdown()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+shutdown (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{int}]{how }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_a578d0e2c462da526f000a68830ff6db6}\label{socket_8h_a578d0e2c462da526f000a68830ff6db6}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_socket@{z\_impl\_zsock\_socket}}
+\index{z\_impl\_zsock\_socket@{z\_impl\_zsock\_socket}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_socket()}{z\_impl\_zsock\_socket()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+socket (\begin{DoxyParamCaption}\item[{int}]{family,  }\item[{int}]{type,  }\item[{int}]{proto }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{socket_8h_ab1fcc4ea0958844b7533b5736a1a9bcf}\label{socket_8h_ab1fcc4ea0958844b7533b5736a1a9bcf}} 
+\index{socket.h@{socket.h}!z\_impl\_zsock\_socketpair@{z\_impl\_zsock\_socketpair}}
+\index{z\_impl\_zsock\_socketpair@{z\_impl\_zsock\_socketpair}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_zsock\_socketpair()}{z\_impl\_zsock\_socketpair()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+zsock\+\_\+socketpair (\begin{DoxyParamCaption}\item[{int}]{family,  }\item[{int}]{type,  }\item[{int}]{proto,  }\item[{int $\ast$}]{sv }\end{DoxyParamCaption})}
+

@@ -1,0 +1,52 @@
+\hypertarget{ivshmem_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/ivshmem.h File Reference}
+\label{ivshmem_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/ivshmem.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/ivshmem.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{ivshmem_8h_aa1ba2225ad347d54ef3c6b66950530e5}{z\+\_\+impl\+\_\+ivshmem\+\_\+get\+\_\+mem}} (const struct device $\ast$dev, uintptr\+\_\+t $\ast$memmap)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{ivshmem_8h_abba4711a40af0a84c14167e338bb4a4c}{z\+\_\+impl\+\_\+ivshmem\+\_\+get\+\_\+id}} (const struct device $\ast$dev)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{ivshmem_8h_a9cfe62ee5135030db64d3132c8484507}{z\+\_\+impl\+\_\+ivshmem\+\_\+get\+\_\+vectors}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{ivshmem_8h_a469b0929ca3360663de7af43c32eb1d8}{z\+\_\+impl\+\_\+ivshmem\+\_\+int\+\_\+peer}} (const struct device $\ast$dev, uint32\+\_\+t peer\+\_\+id, uint16\+\_\+t vector)
+\item 
+int \mbox{\hyperlink{ivshmem_8h_ae4b63310582d0649bf63f98b631434f1}{z\+\_\+impl\+\_\+ivshmem\+\_\+register\+\_\+handler}} (const struct device $\ast$dev, struct k\+\_\+poll\+\_\+signal $\ast$signal, uint16\+\_\+t vector)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ivshmem_8h_abba4711a40af0a84c14167e338bb4a4c}\label{ivshmem_8h_abba4711a40af0a84c14167e338bb4a4c}} 
+\index{ivshmem.h@{ivshmem.h}!z\_impl\_ivshmem\_get\_id@{z\_impl\_ivshmem\_get\_id}}
+\index{z\_impl\_ivshmem\_get\_id@{z\_impl\_ivshmem\_get\_id}!ivshmem.h@{ivshmem.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ivshmem\_get\_id()}{z\_impl\_ivshmem\_get\_id()}}
+{\footnotesize\ttfamily uint32\+\_\+t z\+\_\+impl\+\_\+ivshmem\+\_\+get\+\_\+id (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ivshmem_8h_aa1ba2225ad347d54ef3c6b66950530e5}\label{ivshmem_8h_aa1ba2225ad347d54ef3c6b66950530e5}} 
+\index{ivshmem.h@{ivshmem.h}!z\_impl\_ivshmem\_get\_mem@{z\_impl\_ivshmem\_get\_mem}}
+\index{z\_impl\_ivshmem\_get\_mem@{z\_impl\_ivshmem\_get\_mem}!ivshmem.h@{ivshmem.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ivshmem\_get\_mem()}{z\_impl\_ivshmem\_get\_mem()}}
+{\footnotesize\ttfamily size\+\_\+t z\+\_\+impl\+\_\+ivshmem\+\_\+get\+\_\+mem (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uintptr\+\_\+t $\ast$}]{memmap }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ivshmem_8h_a9cfe62ee5135030db64d3132c8484507}\label{ivshmem_8h_a9cfe62ee5135030db64d3132c8484507}} 
+\index{ivshmem.h@{ivshmem.h}!z\_impl\_ivshmem\_get\_vectors@{z\_impl\_ivshmem\_get\_vectors}}
+\index{z\_impl\_ivshmem\_get\_vectors@{z\_impl\_ivshmem\_get\_vectors}!ivshmem.h@{ivshmem.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ivshmem\_get\_vectors()}{z\_impl\_ivshmem\_get\_vectors()}}
+{\footnotesize\ttfamily uint16\+\_\+t z\+\_\+impl\+\_\+ivshmem\+\_\+get\+\_\+vectors (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ivshmem_8h_a469b0929ca3360663de7af43c32eb1d8}\label{ivshmem_8h_a469b0929ca3360663de7af43c32eb1d8}} 
+\index{ivshmem.h@{ivshmem.h}!z\_impl\_ivshmem\_int\_peer@{z\_impl\_ivshmem\_int\_peer}}
+\index{z\_impl\_ivshmem\_int\_peer@{z\_impl\_ivshmem\_int\_peer}!ivshmem.h@{ivshmem.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ivshmem\_int\_peer()}{z\_impl\_ivshmem\_int\_peer()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+ivshmem\+\_\+int\+\_\+peer (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{peer\+\_\+id,  }\item[{uint16\+\_\+t}]{vector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ivshmem_8h_ae4b63310582d0649bf63f98b631434f1}\label{ivshmem_8h_ae4b63310582d0649bf63f98b631434f1}} 
+\index{ivshmem.h@{ivshmem.h}!z\_impl\_ivshmem\_register\_handler@{z\_impl\_ivshmem\_register\_handler}}
+\index{z\_impl\_ivshmem\_register\_handler@{z\_impl\_ivshmem\_register\_handler}!ivshmem.h@{ivshmem.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ivshmem\_register\_handler()}{z\_impl\_ivshmem\_register\_handler()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+ivshmem\+\_\+register\+\_\+handler (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{struct k\+\_\+poll\+\_\+signal $\ast$}]{signal,  }\item[{uint16\+\_\+t}]{vector }\end{DoxyParamCaption})}
+

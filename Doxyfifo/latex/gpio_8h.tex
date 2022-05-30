@@ -1,0 +1,76 @@
+\hypertarget{gpio_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/gpio.h File Reference}
+\label{gpio_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/gpio.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/gpio.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{gpio_8h_a55cc446b67958d990ea35cf8d269a1a3}{z\+\_\+impl\+\_\+gpio\+\_\+pin\+\_\+interrupt\+\_\+configure}} (const struct device $\ast$port, gpio\+\_\+pin\+\_\+t pin, gpio\+\_\+flags\+\_\+t flags)
+\item 
+int \mbox{\hyperlink{gpio_8h_a25173e771340fc24545d332d0f26f9e2}{z\+\_\+impl\+\_\+gpio\+\_\+pin\+\_\+configure}} (const struct device $\ast$port, gpio\+\_\+pin\+\_\+t pin, gpio\+\_\+flags\+\_\+t flags)
+\item 
+int \mbox{\hyperlink{gpio_8h_a7273090f873c0099f93281f96da061ef}{z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+get\+\_\+raw}} (const struct device $\ast$port, gpio\+\_\+port\+\_\+value\+\_\+t $\ast$value)
+\item 
+int \mbox{\hyperlink{gpio_8h_abeb7cf8909513455d814f45edeea6d5b}{z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+set\+\_\+masked\+\_\+raw}} (const struct device $\ast$port, gpio\+\_\+port\+\_\+pins\+\_\+t mask, gpio\+\_\+port\+\_\+value\+\_\+t value)
+\item 
+int \mbox{\hyperlink{gpio_8h_ab616603064cbc318b954533cf2208c91}{z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+set\+\_\+bits\+\_\+raw}} (const struct device $\ast$port, gpio\+\_\+port\+\_\+pins\+\_\+t pins)
+\item 
+int \mbox{\hyperlink{gpio_8h_a163d2146d5f9d81fa2cfcad513cef935}{z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+clear\+\_\+bits\+\_\+raw}} (const struct device $\ast$port, gpio\+\_\+port\+\_\+pins\+\_\+t pins)
+\item 
+int \mbox{\hyperlink{gpio_8h_aee5009e0026e7d18e8554cf49a73c376}{z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+toggle\+\_\+bits}} (const struct device $\ast$port, gpio\+\_\+port\+\_\+pins\+\_\+t pins)
+\item 
+int \mbox{\hyperlink{gpio_8h_ac2de7f7c59c579b63de6903a488e4ff2}{z\+\_\+impl\+\_\+gpio\+\_\+get\+\_\+pending\+\_\+int}} (const struct device $\ast$dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gpio_8h_ac2de7f7c59c579b63de6903a488e4ff2}\label{gpio_8h_ac2de7f7c59c579b63de6903a488e4ff2}} 
+\index{gpio.h@{gpio.h}!z\_impl\_gpio\_get\_pending\_int@{z\_impl\_gpio\_get\_pending\_int}}
+\index{z\_impl\_gpio\_get\_pending\_int@{z\_impl\_gpio\_get\_pending\_int}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_gpio\_get\_pending\_int()}{z\_impl\_gpio\_get\_pending\_int()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+gpio\+\_\+get\+\_\+pending\+\_\+int (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8h_a25173e771340fc24545d332d0f26f9e2}\label{gpio_8h_a25173e771340fc24545d332d0f26f9e2}} 
+\index{gpio.h@{gpio.h}!z\_impl\_gpio\_pin\_configure@{z\_impl\_gpio\_pin\_configure}}
+\index{z\_impl\_gpio\_pin\_configure@{z\_impl\_gpio\_pin\_configure}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_gpio\_pin\_configure()}{z\_impl\_gpio\_pin\_configure()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+gpio\+\_\+pin\+\_\+configure (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{port,  }\item[{gpio\+\_\+pin\+\_\+t}]{pin,  }\item[{gpio\+\_\+flags\+\_\+t}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8h_a55cc446b67958d990ea35cf8d269a1a3}\label{gpio_8h_a55cc446b67958d990ea35cf8d269a1a3}} 
+\index{gpio.h@{gpio.h}!z\_impl\_gpio\_pin\_interrupt\_configure@{z\_impl\_gpio\_pin\_interrupt\_configure}}
+\index{z\_impl\_gpio\_pin\_interrupt\_configure@{z\_impl\_gpio\_pin\_interrupt\_configure}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_gpio\_pin\_interrupt\_configure()}{z\_impl\_gpio\_pin\_interrupt\_configure()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+gpio\+\_\+pin\+\_\+interrupt\+\_\+configure (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{port,  }\item[{gpio\+\_\+pin\+\_\+t}]{pin,  }\item[{gpio\+\_\+flags\+\_\+t}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8h_a163d2146d5f9d81fa2cfcad513cef935}\label{gpio_8h_a163d2146d5f9d81fa2cfcad513cef935}} 
+\index{gpio.h@{gpio.h}!z\_impl\_gpio\_port\_clear\_bits\_raw@{z\_impl\_gpio\_port\_clear\_bits\_raw}}
+\index{z\_impl\_gpio\_port\_clear\_bits\_raw@{z\_impl\_gpio\_port\_clear\_bits\_raw}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_gpio\_port\_clear\_bits\_raw()}{z\_impl\_gpio\_port\_clear\_bits\_raw()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+clear\+\_\+bits\+\_\+raw (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{port,  }\item[{gpio\+\_\+port\+\_\+pins\+\_\+t}]{pins }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8h_a7273090f873c0099f93281f96da061ef}\label{gpio_8h_a7273090f873c0099f93281f96da061ef}} 
+\index{gpio.h@{gpio.h}!z\_impl\_gpio\_port\_get\_raw@{z\_impl\_gpio\_port\_get\_raw}}
+\index{z\_impl\_gpio\_port\_get\_raw@{z\_impl\_gpio\_port\_get\_raw}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_gpio\_port\_get\_raw()}{z\_impl\_gpio\_port\_get\_raw()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+get\+\_\+raw (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{port,  }\item[{gpio\+\_\+port\+\_\+value\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8h_ab616603064cbc318b954533cf2208c91}\label{gpio_8h_ab616603064cbc318b954533cf2208c91}} 
+\index{gpio.h@{gpio.h}!z\_impl\_gpio\_port\_set\_bits\_raw@{z\_impl\_gpio\_port\_set\_bits\_raw}}
+\index{z\_impl\_gpio\_port\_set\_bits\_raw@{z\_impl\_gpio\_port\_set\_bits\_raw}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_gpio\_port\_set\_bits\_raw()}{z\_impl\_gpio\_port\_set\_bits\_raw()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+set\+\_\+bits\+\_\+raw (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{port,  }\item[{gpio\+\_\+port\+\_\+pins\+\_\+t}]{pins }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8h_abeb7cf8909513455d814f45edeea6d5b}\label{gpio_8h_abeb7cf8909513455d814f45edeea6d5b}} 
+\index{gpio.h@{gpio.h}!z\_impl\_gpio\_port\_set\_masked\_raw@{z\_impl\_gpio\_port\_set\_masked\_raw}}
+\index{z\_impl\_gpio\_port\_set\_masked\_raw@{z\_impl\_gpio\_port\_set\_masked\_raw}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_gpio\_port\_set\_masked\_raw()}{z\_impl\_gpio\_port\_set\_masked\_raw()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+set\+\_\+masked\+\_\+raw (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{port,  }\item[{gpio\+\_\+port\+\_\+pins\+\_\+t}]{mask,  }\item[{gpio\+\_\+port\+\_\+value\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8h_aee5009e0026e7d18e8554cf49a73c376}\label{gpio_8h_aee5009e0026e7d18e8554cf49a73c376}} 
+\index{gpio.h@{gpio.h}!z\_impl\_gpio\_port\_toggle\_bits@{z\_impl\_gpio\_port\_toggle\_bits}}
+\index{z\_impl\_gpio\_port\_toggle\_bits@{z\_impl\_gpio\_port\_toggle\_bits}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_gpio\_port\_toggle\_bits()}{z\_impl\_gpio\_port\_toggle\_bits()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+gpio\+\_\+port\+\_\+toggle\+\_\+bits (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{port,  }\item[{gpio\+\_\+port\+\_\+pins\+\_\+t}]{pins }\end{DoxyParamCaption})}
+

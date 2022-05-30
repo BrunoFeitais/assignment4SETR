@@ -1,0 +1,52 @@
+\hypertarget{sensor_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/sensor.h File Reference}
+\label{sensor_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/sensor.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/sensor.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sensor_8h_ab48fc6ccd166d82d21f6d037b6b95467}{z\+\_\+impl\+\_\+sensor\+\_\+attr\+\_\+set}} (const struct device $\ast$dev, enum sensor\+\_\+channel chan, enum sensor\+\_\+attribute attr, const struct sensor\+\_\+value $\ast$val)
+\item 
+int \mbox{\hyperlink{sensor_8h_a00f0a5fedb0ba69cb33cb5c8faae261e}{z\+\_\+impl\+\_\+sensor\+\_\+attr\+\_\+get}} (const struct device $\ast$dev, enum sensor\+\_\+channel chan, enum sensor\+\_\+attribute attr, struct sensor\+\_\+value $\ast$val)
+\item 
+int \mbox{\hyperlink{sensor_8h_a1662e398b14fe1989ccebc2558b48bd0}{z\+\_\+impl\+\_\+sensor\+\_\+sample\+\_\+fetch}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{sensor_8h_a0084a84026e5f4005ad0fce67ad9b655}{z\+\_\+impl\+\_\+sensor\+\_\+sample\+\_\+fetch\+\_\+chan}} (const struct device $\ast$dev, enum sensor\+\_\+channel type)
+\item 
+int \mbox{\hyperlink{sensor_8h_afbf4145adcc011cdeedfe2ec5ef13808}{z\+\_\+impl\+\_\+sensor\+\_\+channel\+\_\+get}} (const struct device $\ast$dev, enum sensor\+\_\+channel chan, struct sensor\+\_\+value $\ast$val)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sensor_8h_a00f0a5fedb0ba69cb33cb5c8faae261e}\label{sensor_8h_a00f0a5fedb0ba69cb33cb5c8faae261e}} 
+\index{sensor.h@{sensor.h}!z\_impl\_sensor\_attr\_get@{z\_impl\_sensor\_attr\_get}}
+\index{z\_impl\_sensor\_attr\_get@{z\_impl\_sensor\_attr\_get}!sensor.h@{sensor.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_sensor\_attr\_get()}{z\_impl\_sensor\_attr\_get()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+sensor\+\_\+attr\+\_\+get (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{enum sensor\+\_\+channel}]{chan,  }\item[{enum sensor\+\_\+attribute}]{attr,  }\item[{struct sensor\+\_\+value $\ast$}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sensor_8h_ab48fc6ccd166d82d21f6d037b6b95467}\label{sensor_8h_ab48fc6ccd166d82d21f6d037b6b95467}} 
+\index{sensor.h@{sensor.h}!z\_impl\_sensor\_attr\_set@{z\_impl\_sensor\_attr\_set}}
+\index{z\_impl\_sensor\_attr\_set@{z\_impl\_sensor\_attr\_set}!sensor.h@{sensor.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_sensor\_attr\_set()}{z\_impl\_sensor\_attr\_set()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+sensor\+\_\+attr\+\_\+set (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{enum sensor\+\_\+channel}]{chan,  }\item[{enum sensor\+\_\+attribute}]{attr,  }\item[{const struct sensor\+\_\+value $\ast$}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sensor_8h_afbf4145adcc011cdeedfe2ec5ef13808}\label{sensor_8h_afbf4145adcc011cdeedfe2ec5ef13808}} 
+\index{sensor.h@{sensor.h}!z\_impl\_sensor\_channel\_get@{z\_impl\_sensor\_channel\_get}}
+\index{z\_impl\_sensor\_channel\_get@{z\_impl\_sensor\_channel\_get}!sensor.h@{sensor.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_sensor\_channel\_get()}{z\_impl\_sensor\_channel\_get()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+sensor\+\_\+channel\+\_\+get (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{enum sensor\+\_\+channel}]{chan,  }\item[{struct sensor\+\_\+value $\ast$}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sensor_8h_a1662e398b14fe1989ccebc2558b48bd0}\label{sensor_8h_a1662e398b14fe1989ccebc2558b48bd0}} 
+\index{sensor.h@{sensor.h}!z\_impl\_sensor\_sample\_fetch@{z\_impl\_sensor\_sample\_fetch}}
+\index{z\_impl\_sensor\_sample\_fetch@{z\_impl\_sensor\_sample\_fetch}!sensor.h@{sensor.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_sensor\_sample\_fetch()}{z\_impl\_sensor\_sample\_fetch()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+sensor\+\_\+sample\+\_\+fetch (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sensor_8h_a0084a84026e5f4005ad0fce67ad9b655}\label{sensor_8h_a0084a84026e5f4005ad0fce67ad9b655}} 
+\index{sensor.h@{sensor.h}!z\_impl\_sensor\_sample\_fetch\_chan@{z\_impl\_sensor\_sample\_fetch\_chan}}
+\index{z\_impl\_sensor\_sample\_fetch\_chan@{z\_impl\_sensor\_sample\_fetch\_chan}!sensor.h@{sensor.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_sensor\_sample\_fetch\_chan()}{z\_impl\_sensor\_sample\_fetch\_chan()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+sensor\+\_\+sample\+\_\+fetch\+\_\+chan (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{enum sensor\+\_\+channel}]{type }\end{DoxyParamCaption})}
+

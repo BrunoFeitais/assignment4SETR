@@ -1,0 +1,52 @@
+\hypertarget{mem__manage_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/mem\+\_\+manage.h File Reference}
+\label{mem__manage_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/mem\_manage.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/mem\_manage.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mem__manage_8h_adc7b60f3083a6bc62b1f751701713f92}{z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+stats\+\_\+get}} (struct k\+\_\+mem\+\_\+paging\+\_\+stats\+\_\+t $\ast$stats)
+\item 
+void \mbox{\hyperlink{mem__manage_8h_a1b896e8c5572e4721a2a879fbdd18ff9}{z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+thread\+\_\+stats\+\_\+get}} (struct k\+\_\+thread $\ast$thread, struct k\+\_\+mem\+\_\+paging\+\_\+stats\+\_\+t $\ast$stats)
+\item 
+void \mbox{\hyperlink{mem__manage_8h_aed205a94771f547de04f006ff3aab605}{z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+eviction\+\_\+get}} (struct k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+t $\ast$hist)
+\item 
+void \mbox{\hyperlink{mem__manage_8h_aec9403e6d0f99fc8155328e723dbf505}{z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+backing\+\_\+store\+\_\+page\+\_\+in\+\_\+get}} (struct k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+t $\ast$hist)
+\item 
+void \mbox{\hyperlink{mem__manage_8h_a438f35e1d29c41e741ba5a72785f7ba2}{z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+backing\+\_\+store\+\_\+page\+\_\+out\+\_\+get}} (struct k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+t $\ast$hist)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mem__manage_8h_aec9403e6d0f99fc8155328e723dbf505}\label{mem__manage_8h_aec9403e6d0f99fc8155328e723dbf505}} 
+\index{mem\_manage.h@{mem\_manage.h}!z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_in\_get@{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_in\_get}}
+\index{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_in\_get@{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_in\_get}!mem\_manage.h@{mem\_manage.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_in\_get()}{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_in\_get()}}
+{\footnotesize\ttfamily void z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+backing\+\_\+store\+\_\+page\+\_\+in\+\_\+get (\begin{DoxyParamCaption}\item[{struct k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+t $\ast$}]{hist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mem__manage_8h_a438f35e1d29c41e741ba5a72785f7ba2}\label{mem__manage_8h_a438f35e1d29c41e741ba5a72785f7ba2}} 
+\index{mem\_manage.h@{mem\_manage.h}!z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_out\_get@{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_out\_get}}
+\index{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_out\_get@{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_out\_get}!mem\_manage.h@{mem\_manage.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_out\_get()}{z\_impl\_k\_mem\_paging\_histogram\_backing\_store\_page\_out\_get()}}
+{\footnotesize\ttfamily void z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+backing\+\_\+store\+\_\+page\+\_\+out\+\_\+get (\begin{DoxyParamCaption}\item[{struct k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+t $\ast$}]{hist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mem__manage_8h_aed205a94771f547de04f006ff3aab605}\label{mem__manage_8h_aed205a94771f547de04f006ff3aab605}} 
+\index{mem\_manage.h@{mem\_manage.h}!z\_impl\_k\_mem\_paging\_histogram\_eviction\_get@{z\_impl\_k\_mem\_paging\_histogram\_eviction\_get}}
+\index{z\_impl\_k\_mem\_paging\_histogram\_eviction\_get@{z\_impl\_k\_mem\_paging\_histogram\_eviction\_get}!mem\_manage.h@{mem\_manage.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_k\_mem\_paging\_histogram\_eviction\_get()}{z\_impl\_k\_mem\_paging\_histogram\_eviction\_get()}}
+{\footnotesize\ttfamily void z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+eviction\+\_\+get (\begin{DoxyParamCaption}\item[{struct k\+\_\+mem\+\_\+paging\+\_\+histogram\+\_\+t $\ast$}]{hist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mem__manage_8h_adc7b60f3083a6bc62b1f751701713f92}\label{mem__manage_8h_adc7b60f3083a6bc62b1f751701713f92}} 
+\index{mem\_manage.h@{mem\_manage.h}!z\_impl\_k\_mem\_paging\_stats\_get@{z\_impl\_k\_mem\_paging\_stats\_get}}
+\index{z\_impl\_k\_mem\_paging\_stats\_get@{z\_impl\_k\_mem\_paging\_stats\_get}!mem\_manage.h@{mem\_manage.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_k\_mem\_paging\_stats\_get()}{z\_impl\_k\_mem\_paging\_stats\_get()}}
+{\footnotesize\ttfamily void z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+stats\+\_\+get (\begin{DoxyParamCaption}\item[{struct k\+\_\+mem\+\_\+paging\+\_\+stats\+\_\+t $\ast$}]{stats }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mem__manage_8h_a1b896e8c5572e4721a2a879fbdd18ff9}\label{mem__manage_8h_a1b896e8c5572e4721a2a879fbdd18ff9}} 
+\index{mem\_manage.h@{mem\_manage.h}!z\_impl\_k\_mem\_paging\_thread\_stats\_get@{z\_impl\_k\_mem\_paging\_thread\_stats\_get}}
+\index{z\_impl\_k\_mem\_paging\_thread\_stats\_get@{z\_impl\_k\_mem\_paging\_thread\_stats\_get}!mem\_manage.h@{mem\_manage.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_k\_mem\_paging\_thread\_stats\_get()}{z\_impl\_k\_mem\_paging\_thread\_stats\_get()}}
+{\footnotesize\ttfamily void z\+\_\+impl\+\_\+k\+\_\+mem\+\_\+paging\+\_\+thread\+\_\+stats\+\_\+get (\begin{DoxyParamCaption}\item[{struct k\+\_\+thread $\ast$}]{thread,  }\item[{struct k\+\_\+mem\+\_\+paging\+\_\+stats\+\_\+t $\ast$}]{stats }\end{DoxyParamCaption})}
+

@@ -1,0 +1,60 @@
+\hypertarget{i2c_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/i2c.h File Reference}
+\label{i2c_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/i2c.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/i2c.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{i2c_8h_a103c60c811e22b0d2006aa9d077da505}{z\+\_\+impl\+\_\+i2c\+\_\+configure}} (const struct device $\ast$dev, uint32\+\_\+t dev\+\_\+config)
+\item 
+int \mbox{\hyperlink{i2c_8h_ae8eb9659c29414f39e48f8bba17d8d70}{z\+\_\+impl\+\_\+i2c\+\_\+get\+\_\+config}} (const struct device $\ast$dev, uint32\+\_\+t $\ast$dev\+\_\+config)
+\item 
+int \mbox{\hyperlink{i2c_8h_aaf5d3a7fc1c3c5b955557ce04a594b9b}{z\+\_\+impl\+\_\+i2c\+\_\+transfer}} (const struct device $\ast$dev, struct i2c\+\_\+msg $\ast$msgs, uint8\+\_\+t num\+\_\+msgs, uint16\+\_\+t addr)
+\item 
+int \mbox{\hyperlink{i2c_8h_aaf8c05a8c9cf2bae6f45059c1662b903}{z\+\_\+impl\+\_\+i2c\+\_\+recover\+\_\+bus}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{i2c_8h_ade16fa3e0295b8093b69a6d24c415674}{z\+\_\+impl\+\_\+i2c\+\_\+slave\+\_\+driver\+\_\+register}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{i2c_8h_a117fecf5b852d1ee4cb532e7e83cd6ea}{z\+\_\+impl\+\_\+i2c\+\_\+slave\+\_\+driver\+\_\+unregister}} (const struct device $\ast$dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{i2c_8h_a103c60c811e22b0d2006aa9d077da505}\label{i2c_8h_a103c60c811e22b0d2006aa9d077da505}} 
+\index{i2c.h@{i2c.h}!z\_impl\_i2c\_configure@{z\_impl\_i2c\_configure}}
+\index{z\_impl\_i2c\_configure@{z\_impl\_i2c\_configure}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_i2c\_configure()}{z\_impl\_i2c\_configure()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+i2c\+\_\+configure (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{dev\+\_\+config }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{i2c_8h_ae8eb9659c29414f39e48f8bba17d8d70}\label{i2c_8h_ae8eb9659c29414f39e48f8bba17d8d70}} 
+\index{i2c.h@{i2c.h}!z\_impl\_i2c\_get\_config@{z\_impl\_i2c\_get\_config}}
+\index{z\_impl\_i2c\_get\_config@{z\_impl\_i2c\_get\_config}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_i2c\_get\_config()}{z\_impl\_i2c\_get\_config()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+i2c\+\_\+get\+\_\+config (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t $\ast$}]{dev\+\_\+config }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{i2c_8h_aaf8c05a8c9cf2bae6f45059c1662b903}\label{i2c_8h_aaf8c05a8c9cf2bae6f45059c1662b903}} 
+\index{i2c.h@{i2c.h}!z\_impl\_i2c\_recover\_bus@{z\_impl\_i2c\_recover\_bus}}
+\index{z\_impl\_i2c\_recover\_bus@{z\_impl\_i2c\_recover\_bus}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_i2c\_recover\_bus()}{z\_impl\_i2c\_recover\_bus()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+i2c\+\_\+recover\+\_\+bus (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{i2c_8h_ade16fa3e0295b8093b69a6d24c415674}\label{i2c_8h_ade16fa3e0295b8093b69a6d24c415674}} 
+\index{i2c.h@{i2c.h}!z\_impl\_i2c\_slave\_driver\_register@{z\_impl\_i2c\_slave\_driver\_register}}
+\index{z\_impl\_i2c\_slave\_driver\_register@{z\_impl\_i2c\_slave\_driver\_register}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_i2c\_slave\_driver\_register()}{z\_impl\_i2c\_slave\_driver\_register()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+i2c\+\_\+slave\+\_\+driver\+\_\+register (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{i2c_8h_a117fecf5b852d1ee4cb532e7e83cd6ea}\label{i2c_8h_a117fecf5b852d1ee4cb532e7e83cd6ea}} 
+\index{i2c.h@{i2c.h}!z\_impl\_i2c\_slave\_driver\_unregister@{z\_impl\_i2c\_slave\_driver\_unregister}}
+\index{z\_impl\_i2c\_slave\_driver\_unregister@{z\_impl\_i2c\_slave\_driver\_unregister}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_i2c\_slave\_driver\_unregister()}{z\_impl\_i2c\_slave\_driver\_unregister()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+i2c\+\_\+slave\+\_\+driver\+\_\+unregister (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{i2c_8h_aaf5d3a7fc1c3c5b955557ce04a594b9b}\label{i2c_8h_aaf5d3a7fc1c3c5b955557ce04a594b9b}} 
+\index{i2c.h@{i2c.h}!z\_impl\_i2c\_transfer@{z\_impl\_i2c\_transfer}}
+\index{z\_impl\_i2c\_transfer@{z\_impl\_i2c\_transfer}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_i2c\_transfer()}{z\_impl\_i2c\_transfer()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+i2c\+\_\+transfer (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{struct i2c\+\_\+msg $\ast$}]{msgs,  }\item[{uint8\+\_\+t}]{num\+\_\+msgs,  }\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+

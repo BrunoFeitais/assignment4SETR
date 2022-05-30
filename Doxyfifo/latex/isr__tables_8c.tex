@@ -1,0 +1,56 @@
+\hypertarget{isr__tables_8c}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/isr\+\_\+tables.c File Reference}
+\label{isr__tables_8c}\index{build\_nrf52840dk\_nrf52840/zephyr/isr\_tables.c@{build\_nrf52840dk\_nrf52840/zephyr/isr\_tables.c}}
+{\ttfamily \#include $<$toolchain.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+{\ttfamily \#include $<$sw\+\_\+isr\+\_\+table.\+h$>$}\newline
+{\ttfamily \#include $<$arch/cpu.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{isr__tables_8c_a32b705b3a2627e53249b751b7400157c}{ISR\+\_\+\+WRAPPER}}~NULL
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{isr__tables_8c_a6697ad1fc65cce46640329b56bf57e5d}{ISR}}) (const void $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uintptr\+\_\+t \+\_\+\+\_\+irq\+\_\+vector\+\_\+table \mbox{\hyperlink{isr__tables_8c_a404965e8432e312b0c7228d61772e952}{\+\_\+irq\+\_\+vector\+\_\+table}} \mbox{[}48\mbox{]}
+\item 
+struct \+\_\+isr\+\_\+table\+\_\+entry \+\_\+\+\_\+sw\+\_\+isr\+\_\+table \mbox{\hyperlink{isr__tables_8c_ab389752becde3818bf2595fe9602d364}{\+\_\+sw\+\_\+isr\+\_\+table}} \mbox{[}48\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{isr__tables_8c_a32b705b3a2627e53249b751b7400157c}\label{isr__tables_8c_a32b705b3a2627e53249b751b7400157c}} 
+\index{isr\_tables.c@{isr\_tables.c}!ISR\_WRAPPER@{ISR\_WRAPPER}}
+\index{ISR\_WRAPPER@{ISR\_WRAPPER}!isr\_tables.c@{isr\_tables.c}}
+\doxysubsubsection{\texorpdfstring{ISR\_WRAPPER}{ISR\_WRAPPER}}
+{\footnotesize\ttfamily \#define ISR\+\_\+\+WRAPPER~NULL}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{isr__tables_8c_a6697ad1fc65cce46640329b56bf57e5d}\label{isr__tables_8c_a6697ad1fc65cce46640329b56bf57e5d}} 
+\index{isr\_tables.c@{isr\_tables.c}!ISR@{ISR}}
+\index{ISR@{ISR}!isr\_tables.c@{isr\_tables.c}}
+\doxysubsubsection{\texorpdfstring{ISR}{ISR}}
+{\footnotesize\ttfamily typedef void($\ast$ ISR) (const void $\ast$)}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{isr__tables_8c_a404965e8432e312b0c7228d61772e952}\label{isr__tables_8c_a404965e8432e312b0c7228d61772e952}} 
+\index{isr\_tables.c@{isr\_tables.c}!\_irq\_vector\_table@{\_irq\_vector\_table}}
+\index{\_irq\_vector\_table@{\_irq\_vector\_table}!isr\_tables.c@{isr\_tables.c}}
+\doxysubsubsection{\texorpdfstring{\_irq\_vector\_table}{\_irq\_vector\_table}}
+{\footnotesize\ttfamily uintptr\+\_\+t \+\_\+\+\_\+irq\+\_\+vector\+\_\+table \+\_\+irq\+\_\+vector\+\_\+table\mbox{[}48\mbox{]}}
+
+\mbox{\Hypertarget{isr__tables_8c_ab389752becde3818bf2595fe9602d364}\label{isr__tables_8c_ab389752becde3818bf2595fe9602d364}} 
+\index{isr\_tables.c@{isr\_tables.c}!\_sw\_isr\_table@{\_sw\_isr\_table}}
+\index{\_sw\_isr\_table@{\_sw\_isr\_table}!isr\_tables.c@{isr\_tables.c}}
+\doxysubsubsection{\texorpdfstring{\_sw\_isr\_table}{\_sw\_isr\_table}}
+{\footnotesize\ttfamily struct \+\_\+isr\+\_\+table\+\_\+entry \+\_\+\+\_\+sw\+\_\+isr\+\_\+table \+\_\+sw\+\_\+isr\+\_\+table\mbox{[}48\mbox{]}}
+

@@ -1,0 +1,52 @@
+\hypertarget{dma_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/dma.h File Reference}
+\label{dma_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/dma.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/dma.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{dma_8h_a96634ff1067b46907441a0c5695d5293}{z\+\_\+impl\+\_\+dma\+\_\+start}} (const struct device $\ast$dev, uint32\+\_\+t channel)
+\item 
+int \mbox{\hyperlink{dma_8h_a84dfa80b4cb3938d4d462eac6dce55eb}{z\+\_\+impl\+\_\+dma\+\_\+stop}} (const struct device $\ast$dev, uint32\+\_\+t channel)
+\item 
+int \mbox{\hyperlink{dma_8h_a3f9ba5428f74aa47c60d769af5f96596}{z\+\_\+impl\+\_\+dma\+\_\+request\+\_\+channel}} (const struct device $\ast$dev, void $\ast$filter\+\_\+param)
+\item 
+void \mbox{\hyperlink{dma_8h_a85e36478dea506dd8e45dfdc71c0d137}{z\+\_\+impl\+\_\+dma\+\_\+release\+\_\+channel}} (const struct device $\ast$dev, uint32\+\_\+t channel)
+\item 
+int \mbox{\hyperlink{dma_8h_a3567263a1fa61206a982133d649c69eb}{z\+\_\+impl\+\_\+dma\+\_\+chan\+\_\+filter}} (const struct device $\ast$dev, int channel, void $\ast$filter\+\_\+param)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dma_8h_a3567263a1fa61206a982133d649c69eb}\label{dma_8h_a3567263a1fa61206a982133d649c69eb}} 
+\index{dma.h@{dma.h}!z\_impl\_dma\_chan\_filter@{z\_impl\_dma\_chan\_filter}}
+\index{z\_impl\_dma\_chan\_filter@{z\_impl\_dma\_chan\_filter}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_dma\_chan\_filter()}{z\_impl\_dma\_chan\_filter()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+dma\+\_\+chan\+\_\+filter (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{int}]{channel,  }\item[{void $\ast$}]{filter\+\_\+param }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dma_8h_a85e36478dea506dd8e45dfdc71c0d137}\label{dma_8h_a85e36478dea506dd8e45dfdc71c0d137}} 
+\index{dma.h@{dma.h}!z\_impl\_dma\_release\_channel@{z\_impl\_dma\_release\_channel}}
+\index{z\_impl\_dma\_release\_channel@{z\_impl\_dma\_release\_channel}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_dma\_release\_channel()}{z\_impl\_dma\_release\_channel()}}
+{\footnotesize\ttfamily void z\+\_\+impl\+\_\+dma\+\_\+release\+\_\+channel (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dma_8h_a3f9ba5428f74aa47c60d769af5f96596}\label{dma_8h_a3f9ba5428f74aa47c60d769af5f96596}} 
+\index{dma.h@{dma.h}!z\_impl\_dma\_request\_channel@{z\_impl\_dma\_request\_channel}}
+\index{z\_impl\_dma\_request\_channel@{z\_impl\_dma\_request\_channel}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_dma\_request\_channel()}{z\_impl\_dma\_request\_channel()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+dma\+\_\+request\+\_\+channel (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{void $\ast$}]{filter\+\_\+param }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dma_8h_a96634ff1067b46907441a0c5695d5293}\label{dma_8h_a96634ff1067b46907441a0c5695d5293}} 
+\index{dma.h@{dma.h}!z\_impl\_dma\_start@{z\_impl\_dma\_start}}
+\index{z\_impl\_dma\_start@{z\_impl\_dma\_start}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_dma\_start()}{z\_impl\_dma\_start()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+dma\+\_\+start (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dma_8h_a84dfa80b4cb3938d4d462eac6dce55eb}\label{dma_8h_a84dfa80b4cb3938d4d462eac6dce55eb}} 
+\index{dma.h@{dma.h}!z\_impl\_dma\_stop@{z\_impl\_dma\_stop}}
+\index{z\_impl\_dma\_stop@{z\_impl\_dma\_stop}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_dma\_stop()}{z\_impl\_dma\_stop()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+dma\+\_\+stop (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{channel }\end{DoxyParamCaption})}
+

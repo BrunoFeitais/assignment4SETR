@@ -1,0 +1,60 @@
+\hypertarget{bbram_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/bbram.h File Reference}
+\label{bbram_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/bbram.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/bbram.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{bbram_8h_ae73c5cbb2785ab6d335fb3fab6bbb42f}{z\+\_\+impl\+\_\+bbram\+\_\+check\+\_\+invalid}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{bbram_8h_aacf874f98d8cb4728fcb4778f3ab5421}{z\+\_\+impl\+\_\+bbram\+\_\+check\+\_\+standby\+\_\+power}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{bbram_8h_a12f0d43c5b0e30cb8a6920c42e97ed08}{z\+\_\+impl\+\_\+bbram\+\_\+check\+\_\+power}} (const struct device $\ast$dev)
+\item 
+int \mbox{\hyperlink{bbram_8h_a65aac1f9bef4651d60d6247fdb11b078}{z\+\_\+impl\+\_\+bbram\+\_\+get\+\_\+size}} (const struct device $\ast$dev, size\+\_\+t $\ast$size)
+\item 
+int \mbox{\hyperlink{bbram_8h_a59503bb3820fcad225c837aab9cab05e}{z\+\_\+impl\+\_\+bbram\+\_\+read}} (const struct device $\ast$dev, size\+\_\+t offset, size\+\_\+t size, uint8\+\_\+t $\ast$data)
+\item 
+int \mbox{\hyperlink{bbram_8h_aab62ee3b725ccacd441dee2794a73c58}{z\+\_\+impl\+\_\+bbram\+\_\+write}} (const struct device $\ast$dev, size\+\_\+t offset, size\+\_\+t size, const uint8\+\_\+t $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bbram_8h_ae73c5cbb2785ab6d335fb3fab6bbb42f}\label{bbram_8h_ae73c5cbb2785ab6d335fb3fab6bbb42f}} 
+\index{bbram.h@{bbram.h}!z\_impl\_bbram\_check\_invalid@{z\_impl\_bbram\_check\_invalid}}
+\index{z\_impl\_bbram\_check\_invalid@{z\_impl\_bbram\_check\_invalid}!bbram.h@{bbram.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_bbram\_check\_invalid()}{z\_impl\_bbram\_check\_invalid()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+bbram\+\_\+check\+\_\+invalid (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{bbram_8h_a12f0d43c5b0e30cb8a6920c42e97ed08}\label{bbram_8h_a12f0d43c5b0e30cb8a6920c42e97ed08}} 
+\index{bbram.h@{bbram.h}!z\_impl\_bbram\_check\_power@{z\_impl\_bbram\_check\_power}}
+\index{z\_impl\_bbram\_check\_power@{z\_impl\_bbram\_check\_power}!bbram.h@{bbram.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_bbram\_check\_power()}{z\_impl\_bbram\_check\_power()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+bbram\+\_\+check\+\_\+power (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{bbram_8h_aacf874f98d8cb4728fcb4778f3ab5421}\label{bbram_8h_aacf874f98d8cb4728fcb4778f3ab5421}} 
+\index{bbram.h@{bbram.h}!z\_impl\_bbram\_check\_standby\_power@{z\_impl\_bbram\_check\_standby\_power}}
+\index{z\_impl\_bbram\_check\_standby\_power@{z\_impl\_bbram\_check\_standby\_power}!bbram.h@{bbram.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_bbram\_check\_standby\_power()}{z\_impl\_bbram\_check\_standby\_power()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+bbram\+\_\+check\+\_\+standby\+\_\+power (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{bbram_8h_a65aac1f9bef4651d60d6247fdb11b078}\label{bbram_8h_a65aac1f9bef4651d60d6247fdb11b078}} 
+\index{bbram.h@{bbram.h}!z\_impl\_bbram\_get\_size@{z\_impl\_bbram\_get\_size}}
+\index{z\_impl\_bbram\_get\_size@{z\_impl\_bbram\_get\_size}!bbram.h@{bbram.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_bbram\_get\_size()}{z\_impl\_bbram\_get\_size()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+bbram\+\_\+get\+\_\+size (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{size\+\_\+t $\ast$}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{bbram_8h_a59503bb3820fcad225c837aab9cab05e}\label{bbram_8h_a59503bb3820fcad225c837aab9cab05e}} 
+\index{bbram.h@{bbram.h}!z\_impl\_bbram\_read@{z\_impl\_bbram\_read}}
+\index{z\_impl\_bbram\_read@{z\_impl\_bbram\_read}!bbram.h@{bbram.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_bbram\_read()}{z\_impl\_bbram\_read()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+bbram\+\_\+read (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{size,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{bbram_8h_aab62ee3b725ccacd441dee2794a73c58}\label{bbram_8h_aab62ee3b725ccacd441dee2794a73c58}} 
+\index{bbram.h@{bbram.h}!z\_impl\_bbram\_write@{z\_impl\_bbram\_write}}
+\index{z\_impl\_bbram\_write@{z\_impl\_bbram\_write}!bbram.h@{bbram.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_bbram\_write()}{z\_impl\_bbram\_write()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+bbram\+\_\+write (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{size,  }\item[{const uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+

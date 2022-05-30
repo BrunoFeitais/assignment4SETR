@@ -1,0 +1,76 @@
+\hypertarget{led_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/led.h File Reference}
+\label{led_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/led.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/led.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{led_8h_ac9317929780e1aabf1b031ecc41fd9b7}{z\+\_\+impl\+\_\+led\+\_\+blink}} (const struct device $\ast$dev, uint32\+\_\+t led, uint32\+\_\+t delay\+\_\+on, uint32\+\_\+t delay\+\_\+off)
+\item 
+int \mbox{\hyperlink{led_8h_ade535a9ab644ea6c1ec6954eb588021c}{z\+\_\+impl\+\_\+led\+\_\+get\+\_\+info}} (const struct device $\ast$dev, uint32\+\_\+t led, const struct led\+\_\+info $\ast$$\ast$info)
+\item 
+int \mbox{\hyperlink{led_8h_aab1f220e99d75c53d34ceca7b4015d77}{z\+\_\+impl\+\_\+led\+\_\+set\+\_\+brightness}} (const struct device $\ast$dev, uint32\+\_\+t led, uint8\+\_\+t value)
+\item 
+int \mbox{\hyperlink{led_8h_aa5e86870f114d7f2aa66b062f5230543}{z\+\_\+impl\+\_\+led\+\_\+write\+\_\+channels}} (const struct device $\ast$dev, uint32\+\_\+t start\+\_\+channel, uint32\+\_\+t num\+\_\+channels, const uint8\+\_\+t $\ast$buf)
+\item 
+int \mbox{\hyperlink{led_8h_a5d69f46dab6289651ff9d235d3faf876}{z\+\_\+impl\+\_\+led\+\_\+set\+\_\+channel}} (const struct device $\ast$dev, uint32\+\_\+t channel, uint8\+\_\+t value)
+\item 
+int \mbox{\hyperlink{led_8h_aacdff79afbdd2637f2aeb33b83376849}{z\+\_\+impl\+\_\+led\+\_\+set\+\_\+color}} (const struct device $\ast$dev, uint32\+\_\+t led, uint8\+\_\+t num\+\_\+colors, const uint8\+\_\+t $\ast$color)
+\item 
+int \mbox{\hyperlink{led_8h_a27a82f1c7007ec94e5689d2016023a0e}{z\+\_\+impl\+\_\+led\+\_\+on}} (const struct device $\ast$dev, uint32\+\_\+t led)
+\item 
+int \mbox{\hyperlink{led_8h_a989d69719471ed8ee39632b0c1a00848}{z\+\_\+impl\+\_\+led\+\_\+off}} (const struct device $\ast$dev, uint32\+\_\+t led)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{led_8h_ac9317929780e1aabf1b031ecc41fd9b7}\label{led_8h_ac9317929780e1aabf1b031ecc41fd9b7}} 
+\index{led.h@{led.h}!z\_impl\_led\_blink@{z\_impl\_led\_blink}}
+\index{z\_impl\_led\_blink@{z\_impl\_led\_blink}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_led\_blink()}{z\_impl\_led\_blink()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+led\+\_\+blink (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{led,  }\item[{uint32\+\_\+t}]{delay\+\_\+on,  }\item[{uint32\+\_\+t}]{delay\+\_\+off }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{led_8h_ade535a9ab644ea6c1ec6954eb588021c}\label{led_8h_ade535a9ab644ea6c1ec6954eb588021c}} 
+\index{led.h@{led.h}!z\_impl\_led\_get\_info@{z\_impl\_led\_get\_info}}
+\index{z\_impl\_led\_get\_info@{z\_impl\_led\_get\_info}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_led\_get\_info()}{z\_impl\_led\_get\_info()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+led\+\_\+get\+\_\+info (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{led,  }\item[{const struct led\+\_\+info $\ast$$\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{led_8h_a989d69719471ed8ee39632b0c1a00848}\label{led_8h_a989d69719471ed8ee39632b0c1a00848}} 
+\index{led.h@{led.h}!z\_impl\_led\_off@{z\_impl\_led\_off}}
+\index{z\_impl\_led\_off@{z\_impl\_led\_off}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_led\_off()}{z\_impl\_led\_off()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+led\+\_\+off (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{led }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{led_8h_a27a82f1c7007ec94e5689d2016023a0e}\label{led_8h_a27a82f1c7007ec94e5689d2016023a0e}} 
+\index{led.h@{led.h}!z\_impl\_led\_on@{z\_impl\_led\_on}}
+\index{z\_impl\_led\_on@{z\_impl\_led\_on}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_led\_on()}{z\_impl\_led\_on()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+led\+\_\+on (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{led }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{led_8h_aab1f220e99d75c53d34ceca7b4015d77}\label{led_8h_aab1f220e99d75c53d34ceca7b4015d77}} 
+\index{led.h@{led.h}!z\_impl\_led\_set\_brightness@{z\_impl\_led\_set\_brightness}}
+\index{z\_impl\_led\_set\_brightness@{z\_impl\_led\_set\_brightness}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_led\_set\_brightness()}{z\_impl\_led\_set\_brightness()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+led\+\_\+set\+\_\+brightness (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{led,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{led_8h_a5d69f46dab6289651ff9d235d3faf876}\label{led_8h_a5d69f46dab6289651ff9d235d3faf876}} 
+\index{led.h@{led.h}!z\_impl\_led\_set\_channel@{z\_impl\_led\_set\_channel}}
+\index{z\_impl\_led\_set\_channel@{z\_impl\_led\_set\_channel}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_led\_set\_channel()}{z\_impl\_led\_set\_channel()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+led\+\_\+set\+\_\+channel (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{channel,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{led_8h_aacdff79afbdd2637f2aeb33b83376849}\label{led_8h_aacdff79afbdd2637f2aeb33b83376849}} 
+\index{led.h@{led.h}!z\_impl\_led\_set\_color@{z\_impl\_led\_set\_color}}
+\index{z\_impl\_led\_set\_color@{z\_impl\_led\_set\_color}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_led\_set\_color()}{z\_impl\_led\_set\_color()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+led\+\_\+set\+\_\+color (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{led,  }\item[{uint8\+\_\+t}]{num\+\_\+colors,  }\item[{const uint8\+\_\+t $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{led_8h_aa5e86870f114d7f2aa66b062f5230543}\label{led_8h_aa5e86870f114d7f2aa66b062f5230543}} 
+\index{led.h@{led.h}!z\_impl\_led\_write\_channels@{z\_impl\_led\_write\_channels}}
+\index{z\_impl\_led\_write\_channels@{z\_impl\_led\_write\_channels}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_led\_write\_channels()}{z\_impl\_led\_write\_channels()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+led\+\_\+write\+\_\+channels (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{start\+\_\+channel,  }\item[{uint32\+\_\+t}]{num\+\_\+channels,  }\item[{const uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+

@@ -1,0 +1,44 @@
+\hypertarget{ipm_8h}{}\doxysection{build\+\_\+nrf52840dk\+\_\+nrf52840/zephyr/include/generated/syscalls/ipm.h File Reference}
+\label{ipm_8h}\index{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/ipm.h@{build\_nrf52840dk\_nrf52840/zephyr/include/generated/syscalls/ipm.h}}
+{\ttfamily \#include $<$tracing/tracing\+\_\+syscall.\+h$>$}\newline
+{\ttfamily \#include $<$syscall\+\_\+list.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$linker/sections.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ipm_8h_ae6aabb2ddcf9490ac57baa79925ec147}{z\+\_\+impl\+\_\+ipm\+\_\+send}} (const struct device $\ast$ipmdev, int wait, uint32\+\_\+t id, const void $\ast$data, int size)
+\item 
+int \mbox{\hyperlink{ipm_8h_ab815fb1f15bf300e6b222cb0b2a6a382}{z\+\_\+impl\+\_\+ipm\+\_\+max\+\_\+data\+\_\+size\+\_\+get}} (const struct device $\ast$ipmdev)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{ipm_8h_a708750309867ccafd1f3fc2166a20183}{z\+\_\+impl\+\_\+ipm\+\_\+max\+\_\+id\+\_\+val\+\_\+get}} (const struct device $\ast$ipmdev)
+\item 
+int \mbox{\hyperlink{ipm_8h_a4985d7d655a1a7fa609685f217c5dba9}{z\+\_\+impl\+\_\+ipm\+\_\+set\+\_\+enabled}} (const struct device $\ast$ipmdev, int enable)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ipm_8h_ab815fb1f15bf300e6b222cb0b2a6a382}\label{ipm_8h_ab815fb1f15bf300e6b222cb0b2a6a382}} 
+\index{ipm.h@{ipm.h}!z\_impl\_ipm\_max\_data\_size\_get@{z\_impl\_ipm\_max\_data\_size\_get}}
+\index{z\_impl\_ipm\_max\_data\_size\_get@{z\_impl\_ipm\_max\_data\_size\_get}!ipm.h@{ipm.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ipm\_max\_data\_size\_get()}{z\_impl\_ipm\_max\_data\_size\_get()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+ipm\+\_\+max\+\_\+data\+\_\+size\+\_\+get (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{ipmdev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ipm_8h_a708750309867ccafd1f3fc2166a20183}\label{ipm_8h_a708750309867ccafd1f3fc2166a20183}} 
+\index{ipm.h@{ipm.h}!z\_impl\_ipm\_max\_id\_val\_get@{z\_impl\_ipm\_max\_id\_val\_get}}
+\index{z\_impl\_ipm\_max\_id\_val\_get@{z\_impl\_ipm\_max\_id\_val\_get}!ipm.h@{ipm.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ipm\_max\_id\_val\_get()}{z\_impl\_ipm\_max\_id\_val\_get()}}
+{\footnotesize\ttfamily uint32\+\_\+t z\+\_\+impl\+\_\+ipm\+\_\+max\+\_\+id\+\_\+val\+\_\+get (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{ipmdev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ipm_8h_ae6aabb2ddcf9490ac57baa79925ec147}\label{ipm_8h_ae6aabb2ddcf9490ac57baa79925ec147}} 
+\index{ipm.h@{ipm.h}!z\_impl\_ipm\_send@{z\_impl\_ipm\_send}}
+\index{z\_impl\_ipm\_send@{z\_impl\_ipm\_send}!ipm.h@{ipm.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ipm\_send()}{z\_impl\_ipm\_send()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+ipm\+\_\+send (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{ipmdev,  }\item[{int}]{wait,  }\item[{uint32\+\_\+t}]{id,  }\item[{const void $\ast$}]{data,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ipm_8h_a4985d7d655a1a7fa609685f217c5dba9}\label{ipm_8h_a4985d7d655a1a7fa609685f217c5dba9}} 
+\index{ipm.h@{ipm.h}!z\_impl\_ipm\_set\_enabled@{z\_impl\_ipm\_set\_enabled}}
+\index{z\_impl\_ipm\_set\_enabled@{z\_impl\_ipm\_set\_enabled}!ipm.h@{ipm.h}}
+\doxysubsubsection{\texorpdfstring{z\_impl\_ipm\_set\_enabled()}{z\_impl\_ipm\_set\_enabled()}}
+{\footnotesize\ttfamily int z\+\_\+impl\+\_\+ipm\+\_\+set\+\_\+enabled (\begin{DoxyParamCaption}\item[{const struct device $\ast$}]{ipmdev,  }\item[{int}]{enable }\end{DoxyParamCaption})}
+
