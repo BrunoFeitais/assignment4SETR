@@ -186,6 +186,7 @@ void thread_A_code(void *argA , void *argB, void *argC)
               printk("adc reading out of range\n\r");
           }
         }
+        printk("%d (A), ", adc_sample_buffer[0]);
         data_ab->data = adc_sample_buffer[0];
         /* Wait for next release instant */ 
         k_fifo_put(&fifo_ab, &data_ab);  
@@ -210,8 +211,8 @@ void thread_B_code(void *argA , void *argB, void *argC)
 
     while(1) {
         data_ab = k_fifo_get(&fifo_ab, K_FOREVER);
+        printk("(B), ", adc_sample_buffer[0]);
         valores[i] = data_ab->data;
-        printk("%d, ", valores[i]); 
         i++;
 
         int avg = 0;
@@ -240,7 +241,7 @@ void thread_B_code(void *argA , void *argB, void *argC)
           data_bc.data = sum/cnt;
 
           k_fifo_put(&fifo_bc, &data_bc);
-          printk("\nValor calculado: %d \n", data_bc.data);
+          printk("\nValor calculado: %d (B)\n", data_bc.data);
         }           
     }
 }
@@ -248,11 +249,30 @@ void thread_B_code(void *argA , void *argB, void *argC)
 void thread_C_code(void *argA , void *argB, void *argC)
 {
     /* Local variables */
-    long int nact = 0;
     struct data_item_t *data_bc;
+    const struct device *pwm0_dev;          /* Pointer to PWM device structure */
+    int pwm0_channel  = 13;                 /* Ouput pin associated to pwm channel. See DTS for pwm channel - output pin association */ 
+    unsigned int pwmPeriod_us = 1000;       /* PWM period in us */
+    int ret = 0;
+    long int nact = 0;
+
+    pwm0_dev = device_get_binding(DT_LABEL(PWM0_NID));
+    if (pwm0_dev == NULL) {
+	printk("Error: PWM device %s is not ready\n", pwm0_dev->name);
+	return;
+    }
+    else  {
+        printk("PWM device %s is ready\n", pwm0_dev->name);            
+    }
 
     while(1) {
         data_bc = k_fifo_get(&fifo_bc, K_FOREVER);          
-        printk("Valor final: %d\n\n\n",data_bc->data);
+        printk("Valor final: %d (C)\n\n\n",data_bc->data);
+
+        ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*data_bc->data)/1023), PWM_POLARITY_NORMAL);
+        if (ret) {
+          printk("Error %d: failed to set pulse width\n", ret);
+          return;
+        }
   }
 }

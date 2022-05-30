@@ -17,7 +17,6 @@
 #include <devicetree.h>
 #include <drivers/adc.h>
 
-
 /*ADC definitions and includes*/
 #include <hal/nrf_saadc.h>
 #define ADC_NID DT_NODELABEL(adc) 
@@ -49,7 +48,7 @@ static const struct adc_channel_cfg my_channel_cfg = {
 /* Refer to dts file */
 #define GPIO0_NID DT_NODELABEL(gpio0)
 #define PWM0_NID DT_NODELABEL(pwm0)
-#define BOARDLED1 0x0d /* Pin at which LED1 is connected.  Addressing is direct (i.e., pin number) */
+#define BOARDLED1 0xd /* Pin at which LED1 is connected.  Addressing is direct (i.e., pin number) */
 
 /* Size of stack area used by each thread (can be thread specific, if necessary)*/
 #define STACK_SIZE 1024
@@ -124,20 +123,7 @@ void thread_C_code(void *argA, void *argB, void *argC);
 /* Main function */
 void main(void) {
 
-    const struct device *pwm0_dev;          /* Pointer to PWM device structure */
-    int pwm0_channel  = 13;                 /* Ouput pin associated to pwm channel. See DTS for pwm channel - output pin association */ 
-    unsigned int pwmPeriod_us = 1000;       /* PWM period in us */
-    int ret = 0;
     int err = 0;
-    
-    /*pwm0_dev = device_get_binding(DT_LABEL(PWM0_NID));
-    if (pwm0_dev == NULL) {
-      printk("Error: PWM device %s is not ready\n", pwm0_dev->name);
-      return;
-    }
-    else  {
-      printk("PWM device %s is ready\n", pwm0_dev->name);            
-    }*/
 
     /* ADC setup: bind and initialize */
     adc_dev = device_get_binding(DT_LABEL(ADC_NID));
@@ -253,19 +239,31 @@ void thread_B_code(void *argA , void *argB, void *argC)
 void thread_C_code(void *argA , void *argB, void *argC)
 {
     /* Other variables */
-    long int nact = 0;
+    const struct device *pwm0_dev;          /* Pointer to PWM device structure */
+    int pwm0_channel  = 13;                 /* Ouput pin associated to pwm channel. See DTS for pwm channel - output pin association */ 
+    unsigned int pwmPeriod_us = 1000;       /* PWM period in us */
     int ret = 0;
+    long int nact = 0;
+
+    pwm0_dev = device_get_binding(DT_LABEL(PWM0_NID));
+    if (pwm0_dev == NULL) {
+	printk("Error: PWM device %s is not ready\n", pwm0_dev->name);
+	return;
+    }
+    else  {
+        printk("PWM device %s is ready\n", pwm0_dev->name);            
+    }
 
     while(1) {
         k_sem_take(&sem_bc, K_FOREVER);
 
         printk("Atribuir valor a LED: %d (Thread C)\n", DadosBC);
 
-        /*ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*DadosBC)/100), PWM_POLARITY_NORMAL);
+        ret = pwm_pin_set_usec(pwm0_dev, pwm0_channel, pwmPeriod_us,(unsigned int)((pwmPeriod_us*DadosBC)/1023), PWM_POLARITY_NORMAL);
         if (ret) {
           printk("Error %d: failed to set pulse width\n", ret);
           return;
-        }*/      
+        }     
     }
 }
 
