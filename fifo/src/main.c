@@ -34,7 +34,7 @@
 #define BUFFER_SIZE 1
 
 /* Other defines */
-#define TIMER_INTERVAL_MSEC 1000 /* Interval between ADC samples */
+#define TIMER_INTERVAL_MSEC 1 /* Interval between ADC samples */
 
 /* ADC channel configuration */
 static const struct adc_channel_cfg my_channel_cfg = {
@@ -59,7 +59,7 @@ static const struct adc_channel_cfg my_channel_cfg = {
 #define thread_C_prio 1
 
 /* Therad periodicity (in ms)*/
-#define thread_A_period 300
+#define thread_A_period 200
 
 /* Global vars */
 struct k_timer my_timer;
@@ -184,9 +184,10 @@ void thread_A_code(void *argA , void *argB, void *argC)
         else {
           if(adc_sample_buffer[0] > 1023) {
               printk("adc reading out of range\n\r");
+              adc_sample_buffer[0] = 0;
           }
         }
-        printk("%d (A), ", adc_sample_buffer[0]);
+        printk("%d (A)->", adc_sample_buffer[0]);
         data_ab->data = adc_sample_buffer[0];
         /* Wait for next release instant */ 
         k_fifo_put(&fifo_ab, &data_ab);  
