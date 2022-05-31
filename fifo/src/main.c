@@ -216,7 +216,6 @@ void thread_A_code(void *argA , void *argB, void *argC)
           release_time += thread_A_period;
         }
     }
-
 }
 
 /** Thread B code implementation. 
